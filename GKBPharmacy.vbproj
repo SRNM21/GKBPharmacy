@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A90E4A96-B5D1-47A3-8A9E-250622A74009}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GKBPharmacy.My.MyApplication</StartupObject>
+    <RootNamespace>GKBPharmacy</RootNamespace>
+    <AssemblyName>GKBPharmacy</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GKBPharmacy.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GKBPharmacy.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddEditAccountForm.Designer.vb">
+      <DependentUpon>AddEditAccountForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditAccountForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditCustomerForm.Designer.vb">
+      <DependentUpon>AddEditCustomerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditCustomerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditItemForm.Designer.vb">
+      <DependentUpon>AddEditItemForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditItemForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditOrderForm.Designer.vb">
+      <DependentUpon>AddEditOrderForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditOrderForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditPharmacistForm.Designer.vb">
+      <DependentUpon>AddEditPharmacistForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPharmacistForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditSupplierForm.Designer.vb">
+      <DependentUpon>AddEditSupplierForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSupplierForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.vb">
+      <DependentUpon>HistoryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryForm.Designer.vb">
+      <DependentUpon>InventoryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.vb">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAccountForm.Designer.vb">
+      <DependentUpon>ManageAccountForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAccountForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagePharmacistsForm.Designer.vb">
+      <DependentUpon>ManagePharmacistsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePharmacistsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageItemsForm.Designer.vb">
+      <DependentUpon>ManageItemsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageItemsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrdersForm.Designer.vb">
+      <DependentUpon>ManageOrdersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageOrdersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCustomersForm.Designer.vb">
+      <DependentUpon>ManageCustomersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCustomersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSupplierForm.Designer.vb">
+      <DependentUpon>ManageSupplierForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageSupplierForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OrdersCheckOutForm.Designer.vb">
+      <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersCheckOutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.vb">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReferenceInfoForm.Designer.vb">
+      <DependentUpon>ReferenceInfoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReferenceInfoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersForm.Designer.vb">
+      <DependentUpon>SuppliersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplyItemsForm.Designer.vb">
+      <DependentUpon>SupplyItemsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupplyItemsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddEditAccountForm.resx">
+      <DependentUpon>AddEditAccountForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditCustomerForm.resx">
+      <DependentUpon>AddEditCustomerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditItemForm.resx">
+      <DependentUpon>AddEditItemForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditOrderForm.resx">
+      <DependentUpon>AddEditOrderForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditPharmacistForm.resx">
+      <DependentUpon>AddEditPharmacistForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditSupplierForm.resx">
+      <DependentUpon>AddEditSupplierForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryForm.resx">
+      <DependentUpon>InventoryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAccountForm.resx">
+      <DependentUpon>ManageAccountForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagePharmacistsForm.resx">
+      <DependentUpon>ManagePharmacistsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageItemsForm.resx">
+      <DependentUpon>ManageItemsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageOrdersForm.resx">
+      <DependentUpon>ManageOrdersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCustomersForm.resx">
+      <DependentUpon>ManageCustomersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSupplierForm.resx">
+      <DependentUpon>ManageSupplierForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersCheckOutForm.resx">
+      <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersForm.resx">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenceInfoForm.resx">
+      <DependentUpon>ReferenceInfoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersForm.resx">
+      <DependentUpon>SuppliersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplyItemsForm.resx">
+      <DependentUpon>SupplyItemsForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GKB_pharmacy_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PHA_F_ava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADM_Ava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PHA_M_ava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Cstmr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Dshbrd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Hstry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Items.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_LogOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Phrmcst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Spplr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Sttngs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ico_Srch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pharmacist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HidePass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowPass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CUST_M_AVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CUST_F_AVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CUST_404_AVA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
