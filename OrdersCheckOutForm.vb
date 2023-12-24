@@ -216,7 +216,7 @@ Public Class OrdersCheckOutForm
         myCmd = New MySqlCommand(Sql, myConn)
         myCmd.Parameters.AddWithValue("@r_no", ID)
         myCmd.Parameters.AddWithValue("@o_id", OrderIDLbl.Text)
-        myCmd.Parameters.AddWithValue("@p_id", UserID)
+        myCmd.Parameters.AddWithValue("@p_id", If(IsAdminUser, "PHA--ADMIN--123", UserID))
         myCmd.Parameters.AddWithValue("@dc", Date.Now)
         myCmd.Parameters.AddWithValue("@ta", TotalAmount)
 

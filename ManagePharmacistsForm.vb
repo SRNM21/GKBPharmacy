@@ -93,11 +93,16 @@ Public Class ManagePharmacistsForm
 
     Private Sub MPDGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles MPDGV.CellClick
         CreateAccBtn.Visible = False
+        EnableSecondaryButton(MPEditBtn, False)
+        EnableSecondaryButton(MPDeleteBtn, False)
 
         'Keep the Edit/Delete button disabled if the selected cell has no record
         If e.RowIndex < 0 Or e.ColumnIndex < 0 Or String.IsNullOrWhiteSpace(MPDGV.SelectedCells(0).Value.ToString()) Then
-            EnableSecondaryButton(MPEditBtn, False)
-            EnableSecondaryButton(MPDeleteBtn, False)
+            Return
+        End If
+
+        'Disable Modification buttons if clicked on the super account
+        If MPDGV.Rows(e.RowIndex).Cells(0).Value = "PHA--ADMIN--123" Then
             Return
         End If
 

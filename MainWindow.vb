@@ -91,5 +91,4 @@
         LogInForm.Dispose()
         Dispose()
     End Sub
-
 End Class

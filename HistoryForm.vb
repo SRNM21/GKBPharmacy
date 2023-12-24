@@ -136,13 +136,13 @@ Public Class HistoryForm
 
         Select Case FilterCmbBx.SelectedIndex
             Case 0
-                SortBy = "o.order_date ASC"
-            Case 1
                 SortBy = "o.order_date DESC"
+            Case 1
+                SortBy = "o.order_date ASC"
             Case 2
-                SortBy = "r.date_ord_cmplt ASC"
-            Case 3
                 SortBy = "r.date_ord_cmplt DESC"
+            Case 3
+                SortBy = "r.date_ord_cmplt ASC"
             Case 4
                 SortBy = "total_items ASC"
             Case 5
@@ -261,4 +261,5 @@ Public Class HistoryForm
             MessageBox.Show($"Reference Number does not exist", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
 End Class
