@@ -134,6 +134,7 @@ Public Class LogInForm
 
         If response = DialogResult.No Then
             e.Cancel = True
+            Return
         End If
 
         MainWindow.Dispose()
