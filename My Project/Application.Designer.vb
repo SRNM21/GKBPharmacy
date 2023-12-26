@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.GKBPharmacy.LogInForm
+            Me.MainForm = Global.GKBPharmacy.MainWindow
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

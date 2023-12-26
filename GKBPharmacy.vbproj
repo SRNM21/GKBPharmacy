@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -132,6 +132,12 @@
     <Compile Include="AddEditSupplierForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HistoryForm.Designer.vb">
       <DependentUpon>HistoryForm.vb</DependentUpon>
     </Compile>
@@ -204,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="My Project\Resources1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -213,12 +224,6 @@
       <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
     </Compile>
     <Compile Include="OrdersCheckOutForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrdersForm.Designer.vb">
-      <DependentUpon>OrdersForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="OrdersForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReferenceInfoForm.Designer.vb">
@@ -260,6 +265,9 @@
     <EmbeddedResource Include="AddEditSupplierForm.resx">
       <DependentUpon>AddEditSupplierForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryForm.resx">
       <DependentUpon>HistoryForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -294,13 +302,10 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersCheckOutForm.resx">
       <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrdersForm.resx">
-      <DependentUpon>OrdersForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReferenceInfoForm.resx">
       <DependentUpon>ReferenceInfoForm.vb</DependentUpon>

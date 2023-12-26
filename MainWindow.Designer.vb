@@ -47,6 +47,7 @@ Partial Class MainWindow
         Me.MngItemsBtn = New System.Windows.Forms.Button()
         Me.MngSpplr = New System.Windows.Forms.Button()
         Me.Seperator = New System.Windows.Forms.Label()
+        Me.DashboardBtn = New System.Windows.Forms.Button()
         Me.OrdersBtn = New System.Windows.Forms.Button()
         Me.InvntryBtn = New System.Windows.Forms.Button()
         Me.SpplrBtn = New System.Windows.Forms.Button()
@@ -219,6 +220,7 @@ Partial Class MainWindow
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MenuPnlFlwLyt.AutoScroll = True
         Me.MenuPnlFlwLyt.Controls.Add(Me.AdminFlwLyt)
+        Me.MenuPnlFlwLyt.Controls.Add(Me.DashboardBtn)
         Me.MenuPnlFlwLyt.Controls.Add(Me.OrdersBtn)
         Me.MenuPnlFlwLyt.Controls.Add(Me.InvntryBtn)
         Me.MenuPnlFlwLyt.Controls.Add(Me.SpplrBtn)
@@ -378,6 +380,26 @@ Partial Class MainWindow
         Me.Seperator.Size = New System.Drawing.Size(230, 2)
         Me.Seperator.TabIndex = 11
         '
+        'DashboardBtn
+        '
+        Me.DashboardBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.DashboardBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DashboardBtn.FlatAppearance.BorderSize = 0
+        Me.DashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DashboardBtn.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DashboardBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.DashboardBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_Dshbrd
+        Me.DashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DashboardBtn.Location = New System.Drawing.Point(3, 345)
+        Me.DashboardBtn.Name = "DashboardBtn"
+        Me.DashboardBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.DashboardBtn.Size = New System.Drawing.Size(230, 50)
+        Me.DashboardBtn.TabIndex = 7
+        Me.DashboardBtn.Text = "Dashboard"
+        Me.DashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DashboardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.DashboardBtn.UseVisualStyleBackColor = True
+        '
         'OrdersBtn
         '
         Me.OrdersBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -388,7 +410,7 @@ Partial Class MainWindow
         Me.OrdersBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.OrdersBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_Order
         Me.OrdersBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.OrdersBtn.Location = New System.Drawing.Point(3, 345)
+        Me.OrdersBtn.Location = New System.Drawing.Point(3, 401)
         Me.OrdersBtn.Name = "OrdersBtn"
         Me.OrdersBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.OrdersBtn.Size = New System.Drawing.Size(230, 50)
@@ -408,7 +430,7 @@ Partial Class MainWindow
         Me.InvntryBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.InvntryBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_Items
         Me.InvntryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.InvntryBtn.Location = New System.Drawing.Point(3, 401)
+        Me.InvntryBtn.Location = New System.Drawing.Point(3, 457)
         Me.InvntryBtn.Name = "InvntryBtn"
         Me.InvntryBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.InvntryBtn.Size = New System.Drawing.Size(230, 50)
@@ -428,7 +450,7 @@ Partial Class MainWindow
         Me.SpplrBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.SpplrBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_Spplr
         Me.SpplrBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SpplrBtn.Location = New System.Drawing.Point(3, 457)
+        Me.SpplrBtn.Location = New System.Drawing.Point(3, 513)
         Me.SpplrBtn.Name = "SpplrBtn"
         Me.SpplrBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.SpplrBtn.Size = New System.Drawing.Size(230, 50)
@@ -448,7 +470,7 @@ Partial Class MainWindow
         Me.HstryBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.HstryBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_Hstry
         Me.HstryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.HstryBtn.Location = New System.Drawing.Point(3, 513)
+        Me.HstryBtn.Location = New System.Drawing.Point(3, 569)
         Me.HstryBtn.Name = "HstryBtn"
         Me.HstryBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.HstryBtn.Size = New System.Drawing.Size(230, 50)
@@ -468,7 +490,7 @@ Partial Class MainWindow
         Me.LogOutBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.LogOutBtn.Image = Global.GKBPharmacy.My.Resources.Resources.Ico_LogOut
         Me.LogOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LogOutBtn.Location = New System.Drawing.Point(3, 569)
+        Me.LogOutBtn.Location = New System.Drawing.Point(3, 625)
         Me.LogOutBtn.Name = "LogOutBtn"
         Me.LogOutBtn.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LogOutBtn.Size = New System.Drawing.Size(230, 50)
@@ -545,4 +567,5 @@ Partial Class MainWindow
     Friend WithEvents LastNameLbl As Label
     Friend WithEvents Avatar As PictureBox
     Friend WithEvents AdminFlwLyt As FlowLayoutPanel
+    Friend WithEvents DashboardBtn As Button
 End Class

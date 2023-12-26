@@ -49,6 +49,11 @@
         ChangeMainWindowForm(ManageSupplierForm)
     End Sub
 
+    Private Sub DashboardBtn_Click(sender As Object, e As EventArgs) Handles DashboardBtn.Click
+        CurrentPnlLbl.Text = "Dashboard"
+        ChangeMainWindowForm(Dashboard)
+    End Sub
+
     Private Sub OrdersBtn_Click(sender As Object, e As EventArgs) Handles OrdersBtn.Click
         CurrentPnlLbl.Text = "Orders"
         ChangeMainWindowForm(OrdersForm)
@@ -91,4 +96,5 @@
         LogInForm.Dispose()
         Dispose()
     End Sub
+
 End Class
