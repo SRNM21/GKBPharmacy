@@ -38,7 +38,9 @@ Partial Class ReferenceInfoForm
         Me.DateCompLbl = New System.Windows.Forms.Label()
         Me.DateOrdLbl = New System.Windows.Forms.Label()
         Me.OrderIDLbl = New System.Windows.Forms.Label()
+        Me.CustomerAvatarPctrBx = New System.Windows.Forms.PictureBox()
         Me.ReferenceLbl = New System.Windows.Forms.Label()
+        Me.BackBtn = New System.Windows.Forms.Button()
         Me.SortCmbBx = New System.Windows.Forms.ComboBox()
         Me.SortLbl = New System.Windows.Forms.Label()
         Me.SortPnl = New System.Windows.Forms.Panel()
@@ -47,21 +49,19 @@ Partial Class ReferenceInfoForm
         Me.ItemIDLbl = New System.Windows.Forms.Label()
         Me.OrderItemsTblLyt = New System.Windows.Forms.TableLayoutPanel()
         Me.HeaderTblLyt = New System.Windows.Forms.TableLayoutPanel()
+        Me.TotalLbl = New System.Windows.Forms.Label()
         Me.OrderItemsPnl = New System.Windows.Forms.Panel()
         Me.OrderItemsDockPnl = New System.Windows.Forms.Panel()
         Me.SortDockPnl = New System.Windows.Forms.Panel()
         Me.OCDockPnl = New System.Windows.Forms.Panel()
-        Me.CustomerAvatarPctrBx = New System.Windows.Forms.PictureBox()
-        Me.BackBtn = New System.Windows.Forms.Button()
-        Me.TotalLbl = New System.Windows.Forms.Label()
         Me.OrderInfoPnl.SuspendLayout()
+        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SortPnl.SuspendLayout()
         Me.HeaderTblLyt.SuspendLayout()
         Me.OrderItemsPnl.SuspendLayout()
         Me.OrderItemsDockPnl.SuspendLayout()
         Me.SortDockPnl.SuspendLayout()
         Me.OCDockPnl.SuspendLayout()
-        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PHPLbl
@@ -252,6 +252,15 @@ Partial Class ReferenceInfoForm
         Me.OrderIDLbl.Text = "ORD-AAA-AAA-000"
         Me.OrderIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'CustomerAvatarPctrBx
+        '
+        Me.CustomerAvatarPctrBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.CustomerAvatarPctrBx.Location = New System.Drawing.Point(50, 135)
+        Me.CustomerAvatarPctrBx.Name = "CustomerAvatarPctrBx"
+        Me.CustomerAvatarPctrBx.Size = New System.Drawing.Size(100, 100)
+        Me.CustomerAvatarPctrBx.TabIndex = 51
+        Me.CustomerAvatarPctrBx.TabStop = False
+        '
         'ReferenceLbl
         '
         Me.ReferenceLbl.AutoSize = True
@@ -262,6 +271,19 @@ Partial Class ReferenceInfoForm
         Me.ReferenceLbl.Size = New System.Drawing.Size(155, 34)
         Me.ReferenceLbl.TabIndex = 47
         Me.ReferenceLbl.Text = "Reference"
+        '
+        'BackBtn
+        '
+        Me.BackBtn.BackgroundImage = CType(resources.GetObject("BackBtn.BackgroundImage"), System.Drawing.Image)
+        Me.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BackBtn.FlatAppearance.BorderSize = 0
+        Me.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BackBtn.Location = New System.Drawing.Point(20, 20)
+        Me.BackBtn.Name = "BackBtn"
+        Me.BackBtn.Size = New System.Drawing.Size(30, 30)
+        Me.BackBtn.TabIndex = 36
+        Me.BackBtn.UseVisualStyleBackColor = True
         '
         'SortCmbBx
         '
@@ -375,6 +397,19 @@ Partial Class ReferenceInfoForm
         Me.HeaderTblLyt.Size = New System.Drawing.Size(634, 40)
         Me.HeaderTblLyt.TabIndex = 1
         '
+        'TotalLbl
+        '
+        Me.TotalLbl.AutoSize = True
+        Me.TotalLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TotalLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.TotalLbl.Location = New System.Drawing.Point(471, 0)
+        Me.TotalLbl.Name = "TotalLbl"
+        Me.TotalLbl.Size = New System.Drawing.Size(150, 40)
+        Me.TotalLbl.TabIndex = 8
+        Me.TotalLbl.Text = "Total"
+        Me.TotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'OrderItemsPnl
         '
         Me.OrderItemsPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
@@ -418,41 +453,6 @@ Partial Class ReferenceInfoForm
         Me.OCDockPnl.Size = New System.Drawing.Size(1184, 721)
         Me.OCDockPnl.TabIndex = 1
         '
-        'CustomerAvatarPctrBx
-        '
-        Me.CustomerAvatarPctrBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CustomerAvatarPctrBx.Location = New System.Drawing.Point(50, 135)
-        Me.CustomerAvatarPctrBx.Name = "CustomerAvatarPctrBx"
-        Me.CustomerAvatarPctrBx.Size = New System.Drawing.Size(100, 100)
-        Me.CustomerAvatarPctrBx.TabIndex = 51
-        Me.CustomerAvatarPctrBx.TabStop = False
-        '
-        'BackBtn
-        '
-        Me.BackBtn.BackgroundImage = CType(resources.GetObject("BackBtn.BackgroundImage"), System.Drawing.Image)
-        Me.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BackBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BackBtn.FlatAppearance.BorderSize = 0
-        Me.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackBtn.Location = New System.Drawing.Point(20, 20)
-        Me.BackBtn.Name = "BackBtn"
-        Me.BackBtn.Size = New System.Drawing.Size(30, 30)
-        Me.BackBtn.TabIndex = 36
-        Me.BackBtn.UseVisualStyleBackColor = True
-        '
-        'TotalLbl
-        '
-        Me.TotalLbl.AutoSize = True
-        Me.TotalLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TotalLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.TotalLbl.Location = New System.Drawing.Point(471, 0)
-        Me.TotalLbl.Name = "TotalLbl"
-        Me.TotalLbl.Size = New System.Drawing.Size(150, 40)
-        Me.TotalLbl.TabIndex = 8
-        Me.TotalLbl.Text = "Total"
-        Me.TotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ReferenceInfoForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -465,6 +465,7 @@ Partial Class ReferenceInfoForm
         Me.Text = "ReferenceInfoForm"
         Me.OrderInfoPnl.ResumeLayout(False)
         Me.OrderInfoPnl.PerformLayout()
+        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SortPnl.ResumeLayout(False)
         Me.HeaderTblLyt.ResumeLayout(False)
         Me.HeaderTblLyt.PerformLayout()
@@ -473,7 +474,6 @@ Partial Class ReferenceInfoForm
         Me.SortDockPnl.ResumeLayout(False)
         Me.SortDockPnl.PerformLayout()
         Me.OCDockPnl.ResumeLayout(False)
-        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

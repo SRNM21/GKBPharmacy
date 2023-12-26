@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Dashboard
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Get all years in the reference table
         Dim Years As New List(Of String)
 
         Sql = $"SELECT 
@@ -36,6 +37,7 @@ Public Class Dashboard
     Private Sub DrawChart()
         Dim ColorPallete() As Color = {Color.FromArgb(22, 72, 99), Color.FromArgb(33, 97, 132), Color.FromArgb(36, 116, 159), Color.FromArgb(42, 130, 176)}
 
+        'Set the data for pie and column chart
         Dim PieSeries As New Series("PieC") With {
             .ChartType = SeriesChartType.Pie
         }
@@ -47,6 +49,7 @@ Public Class Dashboard
         PieChart.Series.Clear()
         ColChart.Series.Clear()
 
+        'Add all 4 categories data in the charts
         Sql = $"SELECT
                      items.category,
                      COUNT(order_items.item_id) AS item_count
@@ -84,6 +87,7 @@ Public Class Dashboard
 
         myConn.Close()
 
+        'Add all deleted items data in the charts
         Sql = $"SELECT 
                     COUNT(*) AS item_count
                 FROM 
@@ -117,6 +121,7 @@ Public Class Dashboard
 
         myConn.Close()
 
+        'Style the charts
         PieChart.Series.Add(PieSeries)
         ColChart.Series.Add(ColSeries)
 
@@ -131,6 +136,7 @@ Public Class Dashboard
     End Sub
 
     Private Sub GetTotalIncome()
+        'Get total income from the selected year
         Sql = $"SELECT
                     SUM(total_amount) AS total
                 FROM
@@ -150,6 +156,7 @@ Public Class Dashboard
     End Sub
 
     Private Sub GetTotalExpenses()
+        'Get total exoences from the selected year
         Sql = $"SELECT
                     SUM(total_amount) AS total
                 FROM
