@@ -28,7 +28,7 @@ Partial Class HistoryForm
         Me.HistorySearchTxtBxPddng = New System.Windows.Forms.Panel()
         Me.HistorySearchTxtBxPnl = New System.Windows.Forms.Panel()
         Me.FilterCmbBx = New System.Windows.Forms.ComboBox()
-        Me.FilterLbl = New System.Windows.Forms.Label()
+        Me.SortLbl = New System.Windows.Forms.Label()
         Me.FilterCmbBxPnl = New System.Windows.Forms.Panel()
         Me.HeaderDockPnl = New System.Windows.Forms.Panel()
         Me.HistorySearchBtn = New System.Windows.Forms.Button()
@@ -111,17 +111,17 @@ Partial Class HistoryForm
         Me.FilterCmbBx.Size = New System.Drawing.Size(327, 30)
         Me.FilterCmbBx.TabIndex = 0
         '
-        'FilterLbl
+        'SortLbl
         '
-        Me.FilterLbl.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.FilterLbl.AutoSize = True
-        Me.FilterLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FilterLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.FilterLbl.Location = New System.Drawing.Point(770, 28)
-        Me.FilterLbl.Name = "FilterLbl"
-        Me.FilterLbl.Size = New System.Drawing.Size(57, 24)
-        Me.FilterLbl.TabIndex = 2
-        Me.FilterLbl.Text = "Filter"
+        Me.SortLbl.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.SortLbl.AutoSize = True
+        Me.SortLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.SortLbl.Location = New System.Drawing.Point(778, 28)
+        Me.SortLbl.Name = "SortLbl"
+        Me.SortLbl.Size = New System.Drawing.Size(49, 24)
+        Me.SortLbl.TabIndex = 2
+        Me.SortLbl.Text = "Sort"
         '
         'FilterCmbBxPnl
         '
@@ -135,7 +135,7 @@ Partial Class HistoryForm
         '
         'HeaderDockPnl
         '
-        Me.HeaderDockPnl.Controls.Add(Me.FilterLbl)
+        Me.HeaderDockPnl.Controls.Add(Me.SortLbl)
         Me.HeaderDockPnl.Controls.Add(Me.FilterCmbBxPnl)
         Me.HeaderDockPnl.Controls.Add(Me.HistorySearchTxtBxPnl)
         Me.HeaderDockPnl.Controls.Add(Me.HistorySearchBtn)
@@ -445,7 +445,7 @@ Partial Class HistoryForm
     Friend WithEvents FirstBtn As Button
     Friend WithEvents CurrentOrdNumLbl As Label
     Friend WithEvents HeaderDockPnl As Panel
-    Friend WithEvents FilterLbl As Label
+    Friend WithEvents SortLbl As Label
     Friend WithEvents FilterCmbBxPnl As Panel
     Friend WithEvents FilterCmbBx As ComboBox
     Friend WithEvents HistorySearchTxtBxPnl As Panel

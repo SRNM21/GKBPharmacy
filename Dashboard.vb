@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Dashboard
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        YearCmbBx.Items.Clear()
+        Dim Years As New List(Of String)
 
         Sql = $"SELECT 
                     DISTINCT YEAR(date_ord_cmplt) AS year_ord
@@ -15,11 +15,15 @@ Public Class Dashboard
         myRdr = myCmd.ExecuteReader()
 
         While myRdr.Read()
-            YearCmbBx.Items.Add(myRdr("year_ord"))
+            Years.Add(myRdr("year_ord"))
         End While
 
         myConn.Close()
 
+        Years.Sort()
+        Years.Reverse()
+        YearCmbBx.Items.Clear()
+        YearCmbBx.Items.AddRange(Years.ToArray())
         YearCmbBx.SelectedIndex = 0
     End Sub
 
@@ -163,5 +167,4 @@ Public Class Dashboard
 
         myConn.Close()
     End Sub
-
 End Class

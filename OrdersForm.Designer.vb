@@ -38,7 +38,7 @@ Partial Class OrdersForm
         Me.FirstBtn = New System.Windows.Forms.Button()
         Me.CurrentOrdNumLbl = New System.Windows.Forms.Label()
         Me.HeaderDockPnl = New System.Windows.Forms.Panel()
-        Me.FilterLbl = New System.Windows.Forms.Label()
+        Me.SortLbl = New System.Windows.Forms.Label()
         Me.FilterCmbBxPnl = New System.Windows.Forms.Panel()
         Me.FilterCmbBx = New System.Windows.Forms.ComboBox()
         Me.OrderSearchTxtBxPnl = New System.Windows.Forms.Panel()
@@ -254,7 +254,7 @@ Partial Class OrdersForm
         '
         'HeaderDockPnl
         '
-        Me.HeaderDockPnl.Controls.Add(Me.FilterLbl)
+        Me.HeaderDockPnl.Controls.Add(Me.SortLbl)
         Me.HeaderDockPnl.Controls.Add(Me.FilterCmbBxPnl)
         Me.HeaderDockPnl.Controls.Add(Me.OrderSearchTxtBxPnl)
         Me.HeaderDockPnl.Controls.Add(Me.OrderSearchBtn)
@@ -264,17 +264,17 @@ Partial Class OrdersForm
         Me.HeaderDockPnl.Size = New System.Drawing.Size(1184, 80)
         Me.HeaderDockPnl.TabIndex = 0
         '
-        'FilterLbl
+        'SortLbl
         '
-        Me.FilterLbl.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.FilterLbl.AutoSize = True
-        Me.FilterLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FilterLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.FilterLbl.Location = New System.Drawing.Point(883, 28)
-        Me.FilterLbl.Name = "FilterLbl"
-        Me.FilterLbl.Size = New System.Drawing.Size(57, 24)
-        Me.FilterLbl.TabIndex = 2
-        Me.FilterLbl.Text = "Filter"
+        Me.SortLbl.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.SortLbl.AutoSize = True
+        Me.SortLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.SortLbl.Location = New System.Drawing.Point(883, 28)
+        Me.SortLbl.Name = "SortLbl"
+        Me.SortLbl.Size = New System.Drawing.Size(49, 24)
+        Me.SortLbl.TabIndex = 2
+        Me.SortLbl.Text = "Sort"
         '
         'FilterCmbBxPnl
         '
@@ -352,14 +352,14 @@ Partial Class OrdersForm
         Me.ErrProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrProvider.ContainerControl = Me
         '
-        'OrderForm
+        'OrdersForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1184, 721)
         Me.Controls.Add(Me.ODockPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "OrderForm"
+        Me.Name = "OrdersForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OrdersForm"
         Me.ODockPanel.ResumeLayout(False)
@@ -392,7 +392,7 @@ Partial Class OrdersForm
     Friend WithEvents OrderSearchTxtBxPddng As Panel
     Friend WithEvents OrderSearchTxtBx As TextBox
     Friend WithEvents OrderSearchBtn As Button
-    Friend WithEvents FilterLbl As Label
+    Friend WithEvents SortLbl As Label
     Friend WithEvents FilterCmbBxPnl As Panel
     Friend WithEvents FilterCmbBx As ComboBox
     Friend WithEvents OrderPnl As Panel

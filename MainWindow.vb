@@ -2,8 +2,8 @@
     Private Sub MainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TimerTick.Start()
 
-        CurrentPnlLbl.Text = "Orders"
-        ChangeMainWindowForm(OrdersForm)
+        CurrentPnlLbl.Text = "Dashboard"
+        ChangeMainWindowForm(Dashboard)
     End Sub
 
     Public Sub LoadAcount()
