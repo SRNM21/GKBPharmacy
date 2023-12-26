@@ -65,6 +65,9 @@
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -210,15 +213,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="My Project\Resources1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.vb">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdersCheckOutForm.Designer.vb">
       <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
@@ -304,6 +308,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdersForm.resx">
+      <DependentUpon>OrdersForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrdersCheckOutForm.resx">
       <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +325,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -406,6 +414,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\DSH_ICO_Stocks.png" />
+    <None Include="Resources\DSH_ICO_RecentOrders.png" />
+    <None Include="Resources\DSH_ICO_NewOrders.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

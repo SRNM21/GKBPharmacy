@@ -297,6 +297,30 @@ Public Class SupplyItemsForm
             End If
         Next
 
+        Dim Total As Decimal
+
+        For Each row As DataGridViewRow In ODGV.Rows
+            If row.Cells(0).Value IsNot Nothing Then
+                Total += CDec(row.Cells(3).Value.ToString())
+            End If
+        Next
+
+        myConn.Close()
+
+        Sql = "INSERT INTO 
+                        supply 
+                            (supp_id, date_ordered, total_amount)
+                    VALUES 
+                        (@s_id, @do, @ta)"
+
+        myConn.Open()
+
+        myCmd = New MySqlCommand(Sql, myConn)
+        myCmd.Parameters.AddWithValue("@s_id", SuppIDLbl.Text)
+        myCmd.Parameters.AddWithValue("@do", Date.Now)
+        myCmd.Parameters.AddWithValue("@ta", Total)
+        myRdr = myCmd.ExecuteReader()
+
         myConn.Close()
 
         AddStockForItem(OrderedItems)

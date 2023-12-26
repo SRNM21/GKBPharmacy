@@ -25,6 +25,8 @@ Partial Class Dashboard
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.AmountPnl = New System.Windows.Forms.Panel()
         Me.AmountSpltrPnl = New System.Windows.Forms.SplitContainer()
         Me.TotalIncomePnl = New System.Windows.Forms.Panel()
@@ -42,16 +44,8 @@ Partial Class Dashboard
         Me.ChartSplitCntnr = New System.Windows.Forms.SplitContainer()
         Me.PieChartPnl = New System.Windows.Forms.Panel()
         Me.PieChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.SideDashboardPnl = New System.Windows.Forms.TableLayoutPanel()
-        Me.RecentOrdersPnl = New System.Windows.Forms.Panel()
-        Me.RecentOrdersPddng = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.StockPnl = New System.Windows.Forms.Panel()
-        Me.StockPddng = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.NewOrdersPnl = New System.Windows.Forms.Panel()
-        Me.NewOrdersPddng = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ColChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.AmountPnl.SuspendLayout()
         CType(Me.AmountSpltrPnl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AmountSpltrPnl.Panel1.SuspendLayout()
@@ -70,16 +64,8 @@ Partial Class Dashboard
         Me.ChartSplitCntnr.SuspendLayout()
         Me.PieChartPnl.SuspendLayout()
         CType(Me.PieChart, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SideDashboardPnl.SuspendLayout()
-        Me.RecentOrdersPnl.SuspendLayout()
-        Me.RecentOrdersPddng.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StockPnl.SuspendLayout()
-        Me.StockPddng.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NewOrdersPnl.SuspendLayout()
-        Me.NewOrdersPddng.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.ColChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AmountPnl
@@ -261,7 +247,7 @@ Partial Class Dashboard
         '
         'ChartSplitCntnr.Panel2
         '
-        Me.ChartSplitCntnr.Panel2.Controls.Add(Me.SideDashboardPnl)
+        Me.ChartSplitCntnr.Panel2.Controls.Add(Me.Panel1)
         Me.ChartSplitCntnr.Panel2.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.ChartSplitCntnr.Size = New System.Drawing.Size(1144, 446)
         Me.ChartSplitCntnr.SplitterDistance = 695
@@ -297,123 +283,30 @@ Partial Class Dashboard
         Me.PieChart.TabIndex = 18
         Me.PieChart.Text = "Chart1"
         '
-        'SideDashboardPnl
+        'Panel1
         '
-        Me.SideDashboardPnl.ColumnCount = 1
-        Me.SideDashboardPnl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.SideDashboardPnl.Controls.Add(Me.RecentOrdersPnl, 0, 2)
-        Me.SideDashboardPnl.Controls.Add(Me.StockPnl, 0, 4)
-        Me.SideDashboardPnl.Controls.Add(Me.NewOrdersPnl, 0, 0)
-        Me.SideDashboardPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SideDashboardPnl.Location = New System.Drawing.Point(35, 0)
-        Me.SideDashboardPnl.Name = "SideDashboardPnl"
-        Me.SideDashboardPnl.RowCount = 5
-        Me.SideDashboardPnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.SideDashboardPnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.SideDashboardPnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.SideDashboardPnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
-        Me.SideDashboardPnl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.SideDashboardPnl.Size = New System.Drawing.Size(410, 446)
-        Me.SideDashboardPnl.TabIndex = 0
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.ColChart)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(35, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Size = New System.Drawing.Size(410, 446)
+        Me.Panel1.TabIndex = 0
         '
-        'RecentOrdersPnl
+        'ColChart
         '
-        Me.RecentOrdersPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.RecentOrdersPnl.Controls.Add(Me.RecentOrdersPddng)
-        Me.RecentOrdersPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RecentOrdersPnl.Location = New System.Drawing.Point(0, 161)
-        Me.RecentOrdersPnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.RecentOrdersPnl.Name = "RecentOrdersPnl"
-        Me.RecentOrdersPnl.Padding = New System.Windows.Forms.Padding(2)
-        Me.RecentOrdersPnl.Size = New System.Drawing.Size(410, 122)
-        Me.RecentOrdersPnl.TabIndex = 19
-        '
-        'RecentOrdersPddng
-        '
-        Me.RecentOrdersPddng.BackColor = System.Drawing.Color.White
-        Me.RecentOrdersPddng.Controls.Add(Me.PictureBox2)
-        Me.RecentOrdersPddng.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RecentOrdersPddng.Location = New System.Drawing.Point(2, 2)
-        Me.RecentOrdersPddng.Name = "RecentOrdersPddng"
-        Me.RecentOrdersPddng.Size = New System.Drawing.Size(406, 118)
-        Me.RecentOrdersPddng.TabIndex = 1
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(113, 118)
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
-        'StockPnl
-        '
-        Me.StockPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.StockPnl.Controls.Add(Me.StockPddng)
-        Me.StockPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StockPnl.Location = New System.Drawing.Point(0, 323)
-        Me.StockPnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.StockPnl.Name = "StockPnl"
-        Me.StockPnl.Padding = New System.Windows.Forms.Padding(2)
-        Me.StockPnl.Size = New System.Drawing.Size(410, 123)
-        Me.StockPnl.TabIndex = 1
-        '
-        'StockPddng
-        '
-        Me.StockPddng.BackColor = System.Drawing.Color.White
-        Me.StockPddng.Controls.Add(Me.PictureBox3)
-        Me.StockPddng.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.StockPddng.Location = New System.Drawing.Point(2, 2)
-        Me.StockPddng.Name = "StockPddng"
-        Me.StockPddng.Size = New System.Drawing.Size(406, 119)
-        Me.StockPddng.TabIndex = 1
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.White
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(113, 119)
-        Me.PictureBox3.TabIndex = 1
-        Me.PictureBox3.TabStop = False
-        '
-        'NewOrdersPnl
-        '
-        Me.NewOrdersPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.NewOrdersPnl.Controls.Add(Me.NewOrdersPddng)
-        Me.NewOrdersPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NewOrdersPnl.Location = New System.Drawing.Point(0, 0)
-        Me.NewOrdersPnl.Margin = New System.Windows.Forms.Padding(0)
-        Me.NewOrdersPnl.Name = "NewOrdersPnl"
-        Me.NewOrdersPnl.Padding = New System.Windows.Forms.Padding(2)
-        Me.NewOrdersPnl.Size = New System.Drawing.Size(410, 121)
-        Me.NewOrdersPnl.TabIndex = 0
-        '
-        'NewOrdersPddng
-        '
-        Me.NewOrdersPddng.BackColor = System.Drawing.Color.White
-        Me.NewOrdersPddng.Controls.Add(Me.PictureBox1)
-        Me.NewOrdersPddng.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NewOrdersPddng.Location = New System.Drawing.Point(2, 2)
-        Me.NewOrdersPddng.Name = "NewOrdersPddng"
-        Me.NewOrdersPddng.Size = New System.Drawing.Size(406, 117)
-        Me.NewOrdersPddng.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(113, 117)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
+        ChartArea2.Area3DStyle.Enable3D = True
+        ChartArea2.Name = "ChartArea1"
+        Me.ColChart.ChartAreas.Add(ChartArea2)
+        Me.ColChart.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend2.Name = "Legend1"
+        Me.ColChart.Legends.Add(Legend2)
+        Me.ColChart.Location = New System.Drawing.Point(2, 2)
+        Me.ColChart.Name = "ColChart"
+        Me.ColChart.Size = New System.Drawing.Size(406, 442)
+        Me.ColChart.TabIndex = 1
+        Me.ColChart.Text = "Chart1"
         '
         'Dashboard
         '
@@ -446,16 +339,8 @@ Partial Class Dashboard
         Me.ChartSplitCntnr.ResumeLayout(False)
         Me.PieChartPnl.ResumeLayout(False)
         CType(Me.PieChart, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SideDashboardPnl.ResumeLayout(False)
-        Me.RecentOrdersPnl.ResumeLayout(False)
-        Me.RecentOrdersPddng.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.StockPnl.ResumeLayout(False)
-        Me.StockPddng.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NewOrdersPnl.ResumeLayout(False)
-        Me.NewOrdersPddng.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.ColChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -476,14 +361,6 @@ Partial Class Dashboard
     Friend WithEvents ChartSplitCntnr As SplitContainer
     Friend WithEvents PieChartPnl As Panel
     Friend WithEvents PieChart As DataVisualization.Charting.Chart
-    Friend WithEvents SideDashboardPnl As TableLayoutPanel
-    Friend WithEvents RecentOrdersPnl As Panel
-    Friend WithEvents RecentOrdersPddng As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents StockPnl As Panel
-    Friend WithEvents StockPddng As Panel
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents NewOrdersPnl As Panel
-    Friend WithEvents NewOrdersPddng As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ColChart As DataVisualization.Charting.Chart
 End Class

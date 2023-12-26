@@ -26,7 +26,6 @@ Partial Class MainWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.TitleNLogoPnl = New System.Windows.Forms.Panel()
         Me.Title = New System.Windows.Forms.Label()
-        Me.Logo = New System.Windows.Forms.PictureBox()
         Me.HeaderPnl = New System.Windows.Forms.Panel()
         Me.CurrentPnlLbl = New System.Windows.Forms.Label()
         Me.DateAndTimePnl = New System.Windows.Forms.Panel()
@@ -37,7 +36,6 @@ Partial Class MainWindow
         Me.AccountPnl = New System.Windows.Forms.Panel()
         Me.IDLbl = New System.Windows.Forms.Label()
         Me.LastNameLbl = New System.Windows.Forms.Label()
-        Me.Avatar = New System.Windows.Forms.PictureBox()
         Me.MenuPnlFlwLyt = New System.Windows.Forms.FlowLayoutPanel()
         Me.AdminFlwLyt = New System.Windows.Forms.FlowLayoutPanel()
         Me.MngPhrmcstBtn = New System.Windows.Forms.Button()
@@ -54,15 +52,17 @@ Partial Class MainWindow
         Me.HstryBtn = New System.Windows.Forms.Button()
         Me.LogOutBtn = New System.Windows.Forms.Button()
         Me.SwitchWindowPnl = New System.Windows.Forms.Panel()
+        Me.Avatar = New System.Windows.Forms.PictureBox()
+        Me.Logo = New System.Windows.Forms.PictureBox()
         Me.TitleNLogoPnl.SuspendLayout()
-        CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.HeaderPnl.SuspendLayout()
         Me.DateAndTimePnl.SuspendLayout()
         Me.SideMenuPnl.SuspendLayout()
         Me.AccountPnl.SuspendLayout()
-        CType(Me.Avatar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuPnlFlwLyt.SuspendLayout()
         Me.AdminFlwLyt.SuspendLayout()
+        CType(Me.Avatar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TitleNLogoPnl
@@ -86,16 +86,6 @@ Partial Class MainWindow
         Me.Title.TabIndex = 1
         Me.Title.Text = "GKB Pharmacy"
         Me.Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Logo
-        '
-        Me.Logo.BackgroundImage = Global.GKBPharmacy.My.Resources.Resources.GKB_pharmacy_logo
-        Me.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Logo.Location = New System.Drawing.Point(12, 23)
-        Me.Logo.Name = "Logo"
-        Me.Logo.Size = New System.Drawing.Size(84, 44)
-        Me.Logo.TabIndex = 0
-        Me.Logo.TabStop = False
         '
         'HeaderPnl
         '
@@ -202,16 +192,6 @@ Partial Class MainWindow
         Me.LastNameLbl.TabIndex = 1
         Me.LastNameLbl.Text = "Lastname"
         Me.LastNameLbl.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'Avatar
-        '
-        Me.Avatar.BackgroundImage = Global.GKBPharmacy.My.Resources.Resources.ADM_Ava
-        Me.Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Avatar.Location = New System.Drawing.Point(15, 35)
-        Me.Avatar.Name = "Avatar"
-        Me.Avatar.Size = New System.Drawing.Size(80, 80)
-        Me.Avatar.TabIndex = 0
-        Me.Avatar.TabStop = False
         '
         'MenuPnlFlwLyt
         '
@@ -510,6 +490,26 @@ Partial Class MainWindow
         Me.SwitchWindowPnl.Size = New System.Drawing.Size(1181, 721)
         Me.SwitchWindowPnl.TabIndex = 5
         '
+        'Avatar
+        '
+        Me.Avatar.BackgroundImage = Global.GKBPharmacy.My.Resources.Resources.ADM_Ava
+        Me.Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Avatar.Location = New System.Drawing.Point(15, 35)
+        Me.Avatar.Name = "Avatar"
+        Me.Avatar.Size = New System.Drawing.Size(80, 80)
+        Me.Avatar.TabIndex = 0
+        Me.Avatar.TabStop = False
+        '
+        'Logo
+        '
+        Me.Logo.BackgroundImage = Global.GKBPharmacy.My.Resources.Resources.GKB_pharmacy_logo
+        Me.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Logo.Location = New System.Drawing.Point(12, 23)
+        Me.Logo.Name = "Logo"
+        Me.Logo.Size = New System.Drawing.Size(84, 44)
+        Me.Logo.TabIndex = 0
+        Me.Logo.TabStop = False
+        '
         'MainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -526,14 +526,14 @@ Partial Class MainWindow
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GKB Pharmacy"
         Me.TitleNLogoPnl.ResumeLayout(False)
-        CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.HeaderPnl.ResumeLayout(False)
         Me.DateAndTimePnl.ResumeLayout(False)
         Me.SideMenuPnl.ResumeLayout(False)
         Me.AccountPnl.ResumeLayout(False)
-        CType(Me.Avatar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuPnlFlwLyt.ResumeLayout(False)
         Me.AdminFlwLyt.ResumeLayout(False)
+        CType(Me.Avatar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

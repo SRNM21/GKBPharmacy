@@ -352,14 +352,14 @@ Partial Class OrdersForm
         Me.ErrProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrProvider.ContainerControl = Me
         '
-        'OrdersForm
+        'OrderForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1184, 721)
         Me.Controls.Add(Me.ODockPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "OrdersForm"
+        Me.Name = "OrderForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OrdersForm"
         Me.ODockPanel.ResumeLayout(False)

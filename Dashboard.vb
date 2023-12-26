@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Dashboard
-    Private Sub Dashboard_Load(sender As Object, e As EventArgs)
+    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         YearCmbBx.Items.Clear()
 
         Sql = $"SELECT 
@@ -32,11 +32,16 @@ Public Class Dashboard
     Private Sub DrawChart()
         Dim ColorPallete() As Color = {Color.FromArgb(22, 72, 99), Color.FromArgb(33, 97, 132), Color.FromArgb(36, 116, 159), Color.FromArgb(42, 130, 176)}
 
-        Dim series As New Series("AllCat") With {
+        Dim PieSeries As New Series("PieC") With {
             .ChartType = SeriesChartType.Pie
         }
 
+        Dim ColSeries As New Series("ColC") With {
+            .ChartType = SeriesChartType.Column
+        }
+
         PieChart.Series.Clear()
+        ColChart.Series.Clear()
 
         Sql = $"SELECT
                      items.category,
@@ -55,14 +60,20 @@ Public Class Dashboard
         Dim ColorIndex As Integer = 0
 
         While myRdr.Read()
-            Dim point As New DataPoint()
-            point.SetValueXY(myRdr("category"), myRdr("item_count"))
-            point.Color = ColorPallete(ColorIndex)
-            point.IsValueShownAsLabel = True
-            point.Label = "#PERCENT{P0}"
-            point.LabelForeColor = Color.White
-            point.LegendText = myRdr("category")
-            series.Points.Add(point)
+            Dim PiePoint As New DataPoint()
+            PiePoint.SetValueXY(myRdr("category"), myRdr("item_count"))
+            PiePoint.Color = ColorPallete(ColorIndex)
+            PiePoint.IsValueShownAsLabel = True
+            PiePoint.Label = "#PERCENT{P0}"
+            PiePoint.LabelForeColor = Color.White
+            PiePoint.LegendText = myRdr("category")
+            PieSeries.Points.Add(PiePoint)
+
+            Dim ColPoint As New DataPoint()
+            ColPoint.SetValueXY(myRdr("category"), myRdr("item_count"))
+            ColPoint.Color = ColorPallete(ColorIndex)
+            ColPoint.IsVisibleInLegend = False
+            ColSeries.Points.Add(ColPoint)
 
             ColorIndex += 1
         End While
@@ -83,21 +94,32 @@ Public Class Dashboard
         myRdr = myCmd.ExecuteReader()
 
         If myRdr.Read Then
-            Dim point As New DataPoint()
-            point.SetValueXY("Not Available", myRdr("item_count"))
-            point.Color = Color.Gray
-            point.IsValueShownAsLabel = True
-            point.Label = "#PERCENT{P0}"
-            point.LabelForeColor = Color.White
-            point.LegendText = "Not Available"
-            series.Points.Add(point)
+            Dim PiePoint As New DataPoint()
+            PiePoint.SetValueXY("Not Available", myRdr("item_count"))
+            PiePoint.Color = Color.Gray
+            PiePoint.IsValueShownAsLabel = True
+            PiePoint.Label = "#PERCENT{P0}"
+            PiePoint.LabelForeColor = Color.White
+            PiePoint.LegendText = "Not Available"
+            PieSeries.Points.Add(PiePoint)
+
+            Dim ColPoint As New DataPoint()
+            ColPoint.SetValueXY("Not Available", myRdr("item_count"))
+            ColPoint.Color = Color.Gray
+            ColPoint.IsVisibleInLegend = False
+            ColSeries.Points.Add(ColPoint)
+
         End If
 
         myConn.Close()
 
-        PieChart.Series.Add(series)
-        PieChart.Series("AllCat").Font = New Font("Arial", 16)
+        PieChart.Series.Add(PieSeries)
+        ColChart.Series.Add(ColSeries)
 
+        PieChart.Series("PieC").Font = New Font("Arial", 16)
+        ColChart.Series("ColC").Font = New Font("Arial", 16)
+
+        ColChart.Series("ColC").IsVisibleInLegend = False
         For Each legend As Legend In PieChart.Legends
             legend.Font = New Font("Arial", 12, FontStyle.Bold)
             legend.ForeColor = Color.FromArgb(22, 72, 99)
@@ -141,4 +163,5 @@ Public Class Dashboard
 
         myConn.Close()
     End Sub
+
 End Class

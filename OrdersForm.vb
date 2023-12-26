@@ -1,6 +1,7 @@
-﻿Imports System.Text
+﻿Imports MySql.Data.MySqlClient
+Imports System.Text
+
 Imports System.Text.RegularExpressions
-Imports MySql.Data.MySqlClient
 
 Public Class OrdersForm
     'Paging Essentials
