@@ -71,7 +71,7 @@ Public Class Dashboard
             PiePoint.SetValueXY(myRdr("category"), myRdr("item_count"))
             PiePoint.Color = ColorPallete(ColorIndex)
             PiePoint.IsValueShownAsLabel = True
-            PiePoint.Label = "#PERCENT{P0}"
+            PiePoint.Label = "#PERCENT{P2}"
             PiePoint.LabelForeColor = Color.White
             PiePoint.LegendText = myRdr("category")
             PieSeries.Points.Add(PiePoint)
@@ -106,7 +106,7 @@ Public Class Dashboard
             PiePoint.SetValueXY("Not Available", myRdr("item_count"))
             PiePoint.Color = Color.Gray
             PiePoint.IsValueShownAsLabel = True
-            PiePoint.Label = "#PERCENT{P0}"
+            PiePoint.Label = "#PERCENT{P2}"
             PiePoint.LabelForeColor = Color.White
             PiePoint.LegendText = "Not Available"
             PieSeries.Points.Add(PiePoint)

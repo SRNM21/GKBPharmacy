@@ -8,10 +8,6 @@ Public Class AddEditAccountForm
     Private AddFlag As Boolean
     Private PrevPharma As Boolean
 
-    'Temp Admin/Creator
-    Public AdminCreator As String = "ADM_GRG_999"
-    Public DateCreated As Date
-
     Public Sub AddMode()
         'Update form
         AddFlag = True
@@ -34,7 +30,7 @@ Public Class AddEditAccountForm
                         pharmacist_accounts
                     WHERE 
                         pharmacist_accounts.phrmcst_id = pharmacists.phrmcst_id
-                )"
+                ) AND pharmacists.phrmcst_id <> 'PHA--ADMIN--123'"
 
         myCmd = New MySqlCommand(Sql, myConn)
         myRdr = myCmd.ExecuteReader()
@@ -296,7 +292,7 @@ Public Class AddEditAccountForm
 
             'Attach all the related ID's when creating tje account
             myCmd = New MySqlCommand(Sql, myConn)
-            myCmd.Parameters.AddWithValue("@adm_id", AdminCreator)
+            myCmd.Parameters.AddWithValue("@adm_id", UserID)
             myCmd.Parameters.AddWithValue("@ph_id", PharmacistIDLbl.Text)
             myCmd.Parameters.AddWithValue("@dc", Date.Now)
         Else
