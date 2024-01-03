@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class ReferenceInfoForm
+Public Class InvoiceInfoForm
 
     Private Sub BackBtn_Click(sender As Object, e As EventArgs) Handles BackBtn.Click
         ChangeMainWindowForm(HistoryForm)
@@ -21,14 +21,14 @@ Public Class ReferenceInfoForm
                     orders.order_id=(SELECT 
                                             order_id 
                                         FROM 
-                                            reference 
+                                            invoice
                                         WHERE 
-                                            rfrnce_no=@ref)"
+                                            invoice_no=@inv)"
 
         myConn.Open()
 
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@ref", RefNoLbl.Text)
+        myCmd.Parameters.AddWithValue("@inv", InvNoLbl.Text)
         myRdr = myCmd.ExecuteReader()
 
         'Display the customer info
@@ -50,19 +50,19 @@ Public Class ReferenceInfoForm
 
     Private Sub ShowPharmacistInfo()
         Sql = $"SELECT 
-                    reference.phrmcst_id,
+                    invoice.phrmcst_id,
                     CONCAT(pharmacists.first_name, ' ',pharmacists.last_name) AS full_name
                 FROM 
-                    reference
+                    invoice
                  JOIN 
-                    pharmacists ON reference.phrmcst_id=pharmacists.phrmcst_id
+                    pharmacists ON invoice.phrmcst_id=pharmacists.phrmcst_id
                  WHERE 
-                    rfrnce_no=@ref"
+                    invoice_no=@inv"
 
         myConn.Open()
 
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@ref", RefNoLbl.Text)
+        myCmd.Parameters.AddWithValue("@inv", InvNoLbl.Text)
         myRdr = myCmd.ExecuteReader()
 
         If myRdr.Read() Then
@@ -105,17 +105,17 @@ Public Class ReferenceInfoForm
                 FROM
                     order_items
                 JOIN
-                    reference ON order_items.order_id = reference.order_id
+                    invoice ON order_items.order_id = invoice.order_id
                 LEFT JOIN
                     items ON order_items.item_id = items.item_id
                 WHERE
-                    reference.rfrnce_no = @id
+                    invoice.invoice_no = @id
                 ORDER BY {SortBy}"
 
         myConn.Open()
 
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@id", RefNoLbl.Text)
+        myCmd.Parameters.AddWithValue("@id", InvNoLbl.Text)
         myRdr = myCmd.ExecuteReader()
 
         OrderItemsTblLyt.Controls.Clear()
@@ -165,32 +165,32 @@ Public Class ReferenceInfoForm
         myConn.Close()
     End Sub
 
-    Public Sub ShowDetails(Ref As String)
-        RefNoLbl.Text = Ref
+    Public Sub ShowDetails(Inv As String)
+        InvNoLbl.Text = Inv
         SortCmbBx.SelectedIndex = 0
 
         ShowCustomerInfo()
 
         'Sum up the total number of items and the total amount of the order
         Sql = $"SELECT 
-                    reference.order_id,
+                    invoice.order_id,
                     orders.order_date, 
-                    reference.date_ord_cmplt, 
+                    invoice.date_ord_cmplt, 
                     SUM(order_items.qty) AS total_items, 
-                    reference.total_amount
+                    invoice.total_amount
                 FROM 
-                    reference
+                    invoice
                  JOIN 
-                    orders ON reference.order_id=orders.order_id
+                    orders ON invoice.order_id=orders.order_id
                  JOIN 
-                    order_items ON reference.order_id=order_items.order_id
+                    order_items ON invoice.order_id=order_items.order_id
                  WHERE 
-                    rfrnce_no=@ref"
+                    invoice_no=@inv"
 
         myConn.Open()
 
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@ref", Ref)
+        myCmd.Parameters.AddWithValue("@inv", Inv)
         myRdr = myCmd.ExecuteReader()
 
         If myRdr.Read() Then

@@ -208,6 +208,9 @@ Public Class AddEditItemForm
 
         ElseIf ItemTxtBx.Text.Length > 200 Then
             ErrProvider.SetError(ItemTxtBxPnl, "Item must be below 200 characters")
+
+        ElseIf HasDuplicate("items", "name", ItemTxtBx.Text.ToUpper().Trim(), Nothing) Then
+            ErrProvider.SetError(ItemTxtBxPnl, "Item is already exist")
         End If
 
         If Not String.IsNullOrWhiteSpace(ErrProvider.GetError(ItemTxtBxPnl)) Then Warnings += 1

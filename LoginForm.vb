@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Reflection
+Imports MySql.Data.MySqlClient
 
 Public Class LogInForm
     Private ShowPassFlag As Boolean = True

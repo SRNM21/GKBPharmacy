@@ -62,14 +62,14 @@ Public Class HistoryForm
 
         'Make row of details on each items
         While myRdr.Read()
-            If myRdr("rfrnce_no") Is DBNull.Value Then Exit While
+            If myRdr("invoice_no") Is DBNull.Value Then Exit While
 
             HistoryTblLyt.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 50))
             HistoryTblLyt.RowCount += 1
             Dim AlternateColor As Color = If(HistoryTblLyt.RowCount Mod 2 = 0, Color.White, Color.FromArgb(229, 244, 252))
 
             'Get all info from the item
-            CurrentRowRecord = New List(Of String) From {myRdr("rfrnce_no"), myRdr("order_id"), myRdr("total_items"), myRdr("total_amount"), myRdr("order_date"), myRdr("date_ord_cmplt")}
+            CurrentRowRecord = New List(Of String) From {myRdr("invoice_no"), myRdr("order_id"), myRdr("total_items"), myRdr("total_amount"), myRdr("order_date"), myRdr("date_ord_cmplt")}
             CurrentColumn = 0
 
             'Put each item info in specified column
@@ -108,7 +108,7 @@ Public Class HistoryForm
                 .Font = New Font("Arial", 12, FontStyle.Regular),
                 .Cursor = Cursors.Hand,
                 .Text = "View Details",
-                .Tag = myRdr("rfrnce_no"),
+                .Tag = myRdr("invoice_no"),
                 .Size = New Size(140, 40),
                 .Location = New Point(25, 30)
             }
@@ -126,9 +126,9 @@ Public Class HistoryForm
         'Direct to the OrdersCheckOutForm after clicking 'View order'
         Dim Btn As Button = DirectCast(sender, Button)
 
-        Dim Reference As String = CStr(Btn.Tag)
+        Dim Invoice As String = CStr(Btn.Tag)
 
-        ReferenceInfoForm.ShowDetails(Reference)
+        InvoiceInfoForm.ShowDetails(Invoice)
     End Sub
 
     Private Function HistoryQuery() As String
@@ -161,21 +161,21 @@ Public Class HistoryForm
                             FROM 
                                 (SELECT
                                     ROW_NUMBER() OVER (ORDER BY {SortBy}) AS row_num,
-                                    r.rfrnce_no,
-                                    r.order_id,
-                                    r.phrmcst_id,
-                                    r.date_ord_cmplt,
-                                    r.total_amount,
+                                    i.invoice_no,
+                                    i.order_id,
+                                    i.phrmcst_id,
+                                    i.date_ord_cmplt,
+                                    i.total_amount,
                                     o.order_date,
                                     COALESCE(SUM(oi.qty), 0) AS total_items
                                 FROM
-                                    reference r
+                                    invoice i
                                 JOIN
-                                    orders o ON r.order_id = o.order_id
+                                    orders o ON i.order_id = o.order_id
                                 LEFT JOIN
-                                    order_items oi ON r.order_id = oi.order_id
+                                    order_items oi ON i.order_id = oi.order_id
                                 GROUP BY
-                                    r.rfrnce_no, r.order_id, r.phrmcst_id, r.date_ord_cmplt, r.total_amount, o.order_date
+                                    i.invoice_no, i.order_id, i.phrmcst_id, i.date_ord_cmplt, i.total_amount, o.order_date
                                 ORDER BY
                                     row_num
                             )TABLEROW WHERE ")
@@ -229,21 +229,21 @@ Public Class HistoryForm
         End If
 
         'Don't proceed if the search box's text does not match with the order ID format
-        If Not Regex.IsMatch(HistorySearchTxtBx.Text, "^REF-[A-Z]{3}-[A-Z]{3}-\d{3}$") Then
-            ErrProvider.SetError(HistorySearchBtn, "Invalid Reference Number")
+        If Not Regex.IsMatch(HistorySearchTxtBx.Text, "^INV-[A-Z]{3}-[A-Z]{3}-\d{3}$") Then
+            ErrProvider.SetError(HistorySearchBtn, "Invalid Invoice Number")
             Return
         End If
 
         Dim sqlBuilder As New StringBuilder()
 
         sqlBuilder.Append(HistoryQuery())
-        sqlBuilder.Append("rfrnce_no=@r_no")
+        sqlBuilder.Append("invoice_no=@i_no")
 
         myConn.Open()
 
         Sql = sqlBuilder.ToString()
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@r_no", HistorySearchTxtBx.Text)
+        myCmd.Parameters.AddWithValue("@i_no", HistorySearchTxtBx.Text)
         myRdr = myCmd.ExecuteReader()
 
         Dim RowNum As Integer
@@ -255,10 +255,10 @@ Public Class HistoryForm
             myConn.Close()
             UpdatePage()
 
-            MessageBox.Show($"Reference Number Found at Page: {CurrentPage} - Index: {(RowNum Mod 10) - 1}", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show($"Invoice Number Found at Page: {CurrentPage} - Index: {(RowNum Mod 10) - 1}", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             myConn.Close()
-            MessageBox.Show($"Reference Number does not exist", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show($"Invoice Number does not exist", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

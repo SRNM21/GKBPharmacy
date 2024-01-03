@@ -230,10 +230,10 @@
     <Compile Include="OrdersCheckOutForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReferenceInfoForm.Designer.vb">
-      <DependentUpon>ReferenceInfoForm.vb</DependentUpon>
+    <Compile Include="InvoiceInfoForm.Designer.vb">
+      <DependentUpon>InvoiceInfoForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReferenceInfoForm.vb">
+    <Compile Include="InvoiceInfoForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SuppliersForm.Designer.vb">
@@ -314,8 +314,8 @@
     <EmbeddedResource Include="OrdersCheckOutForm.resx">
       <DependentUpon>OrdersCheckOutForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReferenceInfoForm.resx">
-      <DependentUpon>ReferenceInfoForm.vb</DependentUpon>
+    <EmbeddedResource Include="InvoiceInfoForm.resx">
+      <DependentUpon>InvoiceInfoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppliersForm.resx">
       <DependentUpon>SuppliersForm.vb</DependentUpon>

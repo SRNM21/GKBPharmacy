@@ -35,6 +35,10 @@ Public Class ManagePharmacistsForm
     Private Sub MPEditBtn_Click(sender As Object, e As EventArgs) Handles MPEditBtn.Click
         Dim Index = MPDGV.CurrentCell.RowIndex
 
+        If MPDGV.Rows(Index).Cells(0).Value = "PHA--ADMIN--123" Then
+            Return
+        End If
+
         'Proceeds to edit pharmacist mode with a selected record row
         AddEditPharmacistForm.EditMode(New List(Of String) From {
                                             MPDGV.Rows(Index).Cells(0).Value, 'Pharmacist ID (phrmcst_id)
@@ -49,6 +53,10 @@ Public Class ManagePharmacistsForm
 
     Private Sub MPDeleteBtn_Click(sender As Object, e As EventArgs) Handles MPDeleteBtn.Click
         Dim Index = MPDGV.CurrentCell.RowIndex
+
+        If MPDGV.Rows(Index).Cells(0).Value = "PHA--ADMIN--123" Then
+            Return
+        End If
 
         'Give warning and show a record before deleting a pharmacist
         Dim Message As String = $"Are you sure you want to delete this Pharmacist's Record? {vbCrLf}{vbCrLf}" &
@@ -82,6 +90,10 @@ Public Class ManagePharmacistsForm
 
     Private Sub CreateAccBtn_Click(sender As Object, e As EventArgs) Handles CreateAccBtn.Click
         Dim Index = MPDGV.CurrentCell.RowIndex
+
+        If MPDGV.Rows(Index).Cells(0).Value = "PHA--ADMIN--123" Then
+            Return
+        End If
 
         'Proceeds to add/direct create pharmacist account mode with a selected record row
         AddEditAccountForm.DirectCreateAccount(New List(Of String) From {

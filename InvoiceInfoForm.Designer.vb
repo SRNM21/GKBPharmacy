@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ReferenceInfoForm
+Partial Class InvoiceInfoForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,13 +22,13 @@ Partial Class ReferenceInfoForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReferenceInfoForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InvoiceInfoForm))
         Me.PHPLbl = New System.Windows.Forms.Label()
         Me.TotalItemsLb = New System.Windows.Forms.Label()
         Me.OrderTotalLbl = New System.Windows.Forms.Label()
         Me.NameLbl = New System.Windows.Forms.Label()
         Me.CustomerIDLbl = New System.Windows.Forms.Label()
-        Me.RefNoLbl = New System.Windows.Forms.Label()
+        Me.InvNoLbl = New System.Windows.Forms.Label()
         Me.OrderInfoPnl = New System.Windows.Forms.Panel()
         Me.PharmacistIDLbl = New System.Windows.Forms.Label()
         Me.PharmacistNameLbl = New System.Windows.Forms.Label()
@@ -39,7 +39,7 @@ Partial Class ReferenceInfoForm
         Me.DateOrdLbl = New System.Windows.Forms.Label()
         Me.OrderIDLbl = New System.Windows.Forms.Label()
         Me.CustomerAvatarPctrBx = New System.Windows.Forms.PictureBox()
-        Me.ReferenceLbl = New System.Windows.Forms.Label()
+        Me.InvoiceLbl = New System.Windows.Forms.Label()
         Me.BackBtn = New System.Windows.Forms.Button()
         Me.SortCmbBx = New System.Windows.Forms.ComboBox()
         Me.SortLbl = New System.Windows.Forms.Label()
@@ -121,16 +121,16 @@ Partial Class ReferenceInfoForm
         Me.CustomerIDLbl.TabIndex = 50
         Me.CustomerIDLbl.Text = "CST-AAA-AAA-000"
         '
-        'RefNoLbl
+        'InvNoLbl
         '
-        Me.RefNoLbl.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RefNoLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.RefNoLbl.Location = New System.Drawing.Point(205, 74)
-        Me.RefNoLbl.Name = "RefNoLbl"
-        Me.RefNoLbl.Size = New System.Drawing.Size(251, 34)
-        Me.RefNoLbl.TabIndex = 48
-        Me.RefNoLbl.Text = "REF-AAA-AAA-000"
-        Me.RefNoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.InvNoLbl.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InvNoLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.InvNoLbl.Location = New System.Drawing.Point(166, 74)
+        Me.InvNoLbl.Name = "InvNoLbl"
+        Me.InvNoLbl.Size = New System.Drawing.Size(251, 34)
+        Me.InvNoLbl.TabIndex = 48
+        Me.InvNoLbl.Text = "INV-AAA-AAA-000"
+        Me.InvNoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'OrderInfoPnl
         '
@@ -148,8 +148,8 @@ Partial Class ReferenceInfoForm
         Me.OrderInfoPnl.Controls.Add(Me.NameLbl)
         Me.OrderInfoPnl.Controls.Add(Me.CustomerAvatarPctrBx)
         Me.OrderInfoPnl.Controls.Add(Me.CustomerIDLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.RefNoLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.ReferenceLbl)
+        Me.OrderInfoPnl.Controls.Add(Me.InvNoLbl)
+        Me.OrderInfoPnl.Controls.Add(Me.InvoiceLbl)
         Me.OrderInfoPnl.Controls.Add(Me.BackBtn)
         Me.OrderInfoPnl.Dock = System.Windows.Forms.DockStyle.Left
         Me.OrderInfoPnl.Location = New System.Drawing.Point(0, 0)
@@ -261,16 +261,16 @@ Partial Class ReferenceInfoForm
         Me.CustomerAvatarPctrBx.TabIndex = 51
         Me.CustomerAvatarPctrBx.TabStop = False
         '
-        'ReferenceLbl
+        'InvoiceLbl
         '
-        Me.ReferenceLbl.AutoSize = True
-        Me.ReferenceLbl.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReferenceLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.ReferenceLbl.Location = New System.Drawing.Point(44, 72)
-        Me.ReferenceLbl.Name = "ReferenceLbl"
-        Me.ReferenceLbl.Size = New System.Drawing.Size(155, 34)
-        Me.ReferenceLbl.TabIndex = 47
-        Me.ReferenceLbl.Text = "Reference"
+        Me.InvoiceLbl.AutoSize = True
+        Me.InvoiceLbl.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InvoiceLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.InvoiceLbl.Location = New System.Drawing.Point(44, 72)
+        Me.InvoiceLbl.Name = "InvoiceLbl"
+        Me.InvoiceLbl.Size = New System.Drawing.Size(116, 34)
+        Me.InvoiceLbl.TabIndex = 47
+        Me.InvoiceLbl.Text = "Invoice"
         '
         'BackBtn
         '
@@ -453,14 +453,14 @@ Partial Class ReferenceInfoForm
         Me.OCDockPnl.Size = New System.Drawing.Size(1184, 721)
         Me.OCDockPnl.TabIndex = 1
         '
-        'ReferenceInfoForm
+        'InvoiceInfoForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1184, 721)
         Me.Controls.Add(Me.OCDockPnl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "ReferenceInfoForm"
+        Me.Name = "InvoiceInfoForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "ReferenceInfoForm"
         Me.OrderInfoPnl.ResumeLayout(False)
@@ -484,10 +484,10 @@ Partial Class ReferenceInfoForm
     Friend WithEvents NameLbl As Label
     Friend WithEvents CustomerAvatarPctrBx As PictureBox
     Friend WithEvents CustomerIDLbl As Label
-    Friend WithEvents RefNoLbl As Label
+    Friend WithEvents InvNoLbl As Label
     Friend WithEvents BackBtn As Button
     Friend WithEvents OrderInfoPnl As Panel
-    Friend WithEvents ReferenceLbl As Label
+    Friend WithEvents InvoiceLbl As Label
     Friend WithEvents SortCmbBx As ComboBox
     Friend WithEvents SortLbl As Label
     Friend WithEvents SortPnl As Panel

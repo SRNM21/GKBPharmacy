@@ -166,7 +166,7 @@ Partial Class MainWindow
         Me.SideMenuPnl.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.SideMenuPnl.Location = New System.Drawing.Point(0, 90)
         Me.SideMenuPnl.Name = "SideMenuPnl"
-        Me.SideMenuPnl.Size = New System.Drawing.Size(263, 721)
+        Me.SideMenuPnl.Size = New System.Drawing.Size(263, 748)
         Me.SideMenuPnl.TabIndex = 4
         '
         'AccountPnl
@@ -231,7 +231,7 @@ Partial Class MainWindow
         Me.MenuPnlFlwLyt.Margin = New System.Windows.Forms.Padding(0)
         Me.MenuPnlFlwLyt.Name = "MenuPnlFlwLyt"
         Me.MenuPnlFlwLyt.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MenuPnlFlwLyt.Size = New System.Drawing.Size(264, 568)
+        Me.MenuPnlFlwLyt.Size = New System.Drawing.Size(264, 595)
         Me.MenuPnlFlwLyt.TabIndex = 4
         Me.MenuPnlFlwLyt.WrapContents = False
         '
@@ -507,7 +507,7 @@ Partial Class MainWindow
         Me.SwitchWindowPnl.Location = New System.Drawing.Point(263, 90)
         Me.SwitchWindowPnl.Margin = New System.Windows.Forms.Padding(0)
         Me.SwitchWindowPnl.Name = "SwitchWindowPnl"
-        Me.SwitchWindowPnl.Size = New System.Drawing.Size(1181, 721)
+        Me.SwitchWindowPnl.Size = New System.Drawing.Size(1181, 748)
         Me.SwitchWindowPnl.TabIndex = 5
         '
         'MainWindow
@@ -515,7 +515,7 @@ Partial Class MainWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1444, 811)
+        Me.ClientSize = New System.Drawing.Size(1444, 838)
         Me.Controls.Add(Me.SwitchWindowPnl)
         Me.Controls.Add(Me.SideMenuPnl)
         Me.Controls.Add(Me.HeaderPnl)

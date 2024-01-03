@@ -175,16 +175,16 @@ Public Class OrdersCheckOutForm
         End If
 
         Dim Attempt As Integer = 10
-        Dim ID As String = GenerateID("REF-")
+        Dim ID As String = GenerateID("INV-")
 
         'Regenerate Reference No. if the previous Item ID is already in the database
-        While HasDuplicate("reference", "rfrnce_no", ID, Nothing) AndAlso Attempt > 0
-            ID = GenerateID("REF-")
+        While HasDuplicate("invoice", "invoice_no", ID, Nothing) AndAlso Attempt > 0
+            ID = GenerateID("INV-")
             Attempt -= 1
         End While
 
         'Prompt orders is full If after 10 attemps and the ID is still has duplicate
-        If HasDuplicate("reference", "rfrnce_no", ID, Nothing) Then
+        If HasDuplicate("invoice", "invoice_no", ID, Nothing) Then
             MessageBox.Show("Order History is already full", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
@@ -207,14 +207,14 @@ Public Class OrdersCheckOutForm
 
         'Put the order in the reference
         Sql = "INSERT INTO 
-                    reference 
-                        (rfrnce_no, order_id, phrmcst_id, date_ord_cmplt, total_amount) 
+                    invoice 
+                        (invoice_no, order_id, phrmcst_id, date_ord_cmplt, total_amount) 
                 VALUES 
-                    (@r_no, @o_id, @p_id, @dc, @ta)"
+                    (@i_no, @o_id, @p_id, @dc, @ta)"
 
         myConn.Open()
         myCmd = New MySqlCommand(Sql, myConn)
-        myCmd.Parameters.AddWithValue("@r_no", ID)
+        myCmd.Parameters.AddWithValue("@i_no", ID)
         myCmd.Parameters.AddWithValue("@o_id", OrderIDLbl.Text)
         myCmd.Parameters.AddWithValue("@p_id", If(IsAdminUser, "PHA--ADMIN--123", UserID))
         myCmd.Parameters.AddWithValue("@dc", Date.Now)

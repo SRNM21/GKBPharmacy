@@ -9,7 +9,7 @@ Public Class Dashboard
         Sql = $"SELECT 
                     DISTINCT YEAR(date_ord_cmplt) AS year_ord
                 FROM 
-                    reference"
+                    invoice"
 
         myConn.Open()
         myCmd = New MySqlCommand(Sql, myConn)
@@ -25,13 +25,15 @@ Public Class Dashboard
         Years.Reverse()
         YearCmbBx.Items.Clear()
         YearCmbBx.Items.AddRange(Years.ToArray())
-        YearCmbBx.SelectedIndex = 0
+
+        If YearCmbBx.Items.Count > 0 Then
+            YearCmbBx.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub YearCmbBx_SelectedValueChanged(sender As Object, e As EventArgs) Handles YearCmbBx.SelectedValueChanged
         DrawChart()
         GetTotalIncome()
-        GetTotalExpenses()
     End Sub
 
     Private Sub DrawChart()
@@ -50,15 +52,19 @@ Public Class Dashboard
         ColChart.Series.Clear()
 
         'Add all 4 categories data in the charts
-        Sql = $"SELECT
-                     items.category,
-                     COUNT(order_items.item_id) AS item_count
-                 FROM
-                     items
-                 JOIN
-                     order_items ON order_items.item_id = items.item_id
-                 GROUP BY
-                     items.category"
+        Sql = $"SELECT 
+                    items.category,
+                    COUNT(items.item_id) AS item_count
+                FROM 
+                    order_items 
+                JOIN 
+                    invoice ON invoice.order_id = order_items.order_id 
+		        JOIN 
+	  	            items ON order_items.item_id = items.item_id
+                WHERE 
+                    invoice.date_ord_cmplt LIKE '{YearCmbBx.Text}%'
+		        GROUP BY 
+		            items.category"
 
         myConn.Open()
         myCmd = New MySqlCommand(Sql, myConn)
@@ -95,7 +101,8 @@ Public Class Dashboard
                 JOIN 
                     orders ON orders.order_id = order_items.order_id 
                 WHERE 
-                    orders.status = 'Done' AND order_items.item_id is null"
+                    (orders.status = 'Done' AND order_items.item_id is null)
+                AND orders.order_date LIKE '{YearCmbBx.Text}%'"
 
         myConn.Open()
         myCmd = New MySqlCommand(Sql, myConn)
@@ -116,7 +123,6 @@ Public Class Dashboard
             ColPoint.Color = Color.Gray
             ColPoint.IsVisibleInLegend = False
             ColSeries.Points.Add(ColPoint)
-
         End If
 
         myConn.Close()
@@ -140,7 +146,7 @@ Public Class Dashboard
         Sql = $"SELECT
                     SUM(total_amount) AS total
                 FROM
-                    reference
+                    invoice
                 WHERE
                     date_ord_cmplt LIKE '{YearCmbBx.Text}%'"
 
@@ -150,26 +156,6 @@ Public Class Dashboard
 
         If myRdr.Read Then
             TotalIncPhpLbl.Text = $"PHP {If(myRdr("total") IsNot DBNull.Value, myRdr("total"), 0):N2}"
-        End If
-
-        myConn.Close()
-    End Sub
-
-    Private Sub GetTotalExpenses()
-        'Get total exoences from the selected year
-        Sql = $"SELECT
-                    SUM(total_amount) AS total
-                FROM
-                    supply
-                WHERE
-                    date_ordered LIKE '{YearCmbBx.Text}%'"
-
-        myConn.Open()
-        myCmd = New MySqlCommand(Sql, myConn)
-        myRdr = myCmd.ExecuteReader()
-
-        If myRdr.Read Then
-            TotalExpPhpLbl.Text = $"PHP {If(myRdr("total") IsNot DBNull.Value, myRdr("total"), 0):N2}"
         End If
 
         myConn.Close()

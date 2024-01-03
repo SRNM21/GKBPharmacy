@@ -471,13 +471,14 @@ Public Class AddEditOrderForm
 
                 Sql = "INSERT INTO 
                             order_items 
-                                (order_id, item_id, qty, total_amount) 
+                                (order_id, item_id, price, qty, total_amount) 
                         VALUES 
-                            (@o_id, @i_id, @qty, @ta)"
+                            (@o_id, @i_id, @prc, @qty, @ta)"
 
                 myCmd = New MySqlCommand(Sql, myConn)
                 myCmd.Parameters.AddWithValue("@o_id", ID)
                 myCmd.Parameters.AddWithValue("@i_id", row.Cells(0).Value.ToString())
+                myCmd.Parameters.AddWithValue("@prc", row.Cells(2).Value.ToString())
                 myCmd.Parameters.AddWithValue("@qty", row.Cells(3).Value.ToString())
                 myCmd.Parameters.AddWithValue("@ta", row.Cells(4).Value.ToString())
 
