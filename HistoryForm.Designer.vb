@@ -39,7 +39,7 @@ Partial Class HistoryForm
         Me.CurrentOrdNumLbl = New System.Windows.Forms.Label()
         Me.TotalItemsLbl = New System.Windows.Forms.Label()
         Me.OrderIDLbl = New System.Windows.Forms.Label()
-        Me.ReferenceLbl = New System.Windows.Forms.Label()
+        Me.InvoiceLbl = New System.Windows.Forms.Label()
         Me.HistoryTblLyt = New System.Windows.Forms.TableLayoutPanel()
         Me.HeaderTblLyt = New System.Windows.Forms.TableLayoutPanel()
         Me.TotalAmountLbl = New System.Windows.Forms.Label()
@@ -259,18 +259,18 @@ Partial Class HistoryForm
         Me.OrderIDLbl.Text = "Order ID"
         Me.OrderIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ReferenceLbl
+        'InvoiceLbl
         '
-        Me.ReferenceLbl.AutoSize = True
-        Me.ReferenceLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ReferenceLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReferenceLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.ReferenceLbl.Location = New System.Drawing.Point(3, 0)
-        Me.ReferenceLbl.Name = "ReferenceLbl"
-        Me.ReferenceLbl.Size = New System.Drawing.Size(163, 40)
-        Me.ReferenceLbl.TabIndex = 0
-        Me.ReferenceLbl.Text = "Reference No."
-        Me.ReferenceLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InvoiceLbl.AutoSize = True
+        Me.InvoiceLbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.InvoiceLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InvoiceLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.InvoiceLbl.Location = New System.Drawing.Point(3, 0)
+        Me.InvoiceLbl.Name = "InvoiceLbl"
+        Me.InvoiceLbl.Size = New System.Drawing.Size(163, 40)
+        Me.InvoiceLbl.TabIndex = 0
+        Me.InvoiceLbl.Text = "Invoice No."
+        Me.InvoiceLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'HistoryTblLyt
         '
@@ -304,7 +304,7 @@ Partial Class HistoryForm
         Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.88095!))
         Me.HeaderTblLyt.Controls.Add(Me.TotalItemsLbl, 0, 0)
         Me.HeaderTblLyt.Controls.Add(Me.OrderIDLbl, 0, 0)
-        Me.HeaderTblLyt.Controls.Add(Me.ReferenceLbl, 0, 0)
+        Me.HeaderTblLyt.Controls.Add(Me.InvoiceLbl, 0, 0)
         Me.HeaderTblLyt.Controls.Add(Me.TotalAmountLbl, 3, 0)
         Me.HeaderTblLyt.Controls.Add(Me.DateOrdLbl, 4, 0)
         Me.HeaderTblLyt.Controls.Add(Me.DateComLbl, 5, 0)
@@ -437,7 +437,7 @@ Partial Class HistoryForm
     Friend WithEvents HeaderTblLyt As TableLayoutPanel
     Friend WithEvents TotalItemsLbl As Label
     Friend WithEvents OrderIDLbl As Label
-    Friend WithEvents ReferenceLbl As Label
+    Friend WithEvents InvoiceLbl As Label
     Friend WithEvents FooterDockPnl As Panel
     Friend WithEvents LastBtn As Button
     Friend WithEvents NextBtn As Button
