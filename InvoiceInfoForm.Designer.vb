@@ -22,255 +22,376 @@ Partial Class InvoiceInfoForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InvoiceInfoForm))
-        Me.PHPLbl = New System.Windows.Forms.Label()
-        Me.TotalItemsLb = New System.Windows.Forms.Label()
-        Me.OrderTotalLbl = New System.Windows.Forms.Label()
-        Me.NameLbl = New System.Windows.Forms.Label()
-        Me.CustomerIDLbl = New System.Windows.Forms.Label()
-        Me.InvNoLbl = New System.Windows.Forms.Label()
-        Me.OrderInfoPnl = New System.Windows.Forms.Panel()
-        Me.PharmacistIDLbl = New System.Windows.Forms.Label()
+        Me.IDGVPnl = New System.Windows.Forms.Panel()
+        Me.IDGV = New System.Windows.Forms.DataGridView()
+        Me.HeaderPnl = New System.Windows.Forms.Panel()
+        Me.InfoPnl = New System.Windows.Forms.Panel()
+        Me.TranInfoSeperator = New System.Windows.Forms.SplitContainer()
+        Me.PharmacistPnl = New System.Windows.Forms.Panel()
+        Me.PharmacitsName = New System.Windows.Forms.Label()
+        Me.PhoneNum = New System.Windows.Forms.Label()
+        Me.Email = New System.Windows.Forms.Label()
+        Me.PhoneNumLbl = New System.Windows.Forms.Label()
+        Me.EmailLbl = New System.Windows.Forms.Label()
+        Me.PGenderLbl = New System.Windows.Forms.Label()
+        Me.PGender = New System.Windows.Forms.Label()
+        Me.PharmacistID = New System.Windows.Forms.Label()
         Me.PharmacistNameLbl = New System.Windows.Forms.Label()
-        Me.PharmacistLbl = New System.Windows.Forms.Label()
-        Me.DCLbl = New System.Windows.Forms.Label()
-        Me.DOLbl = New System.Windows.Forms.Label()
-        Me.DateCompLbl = New System.Windows.Forms.Label()
-        Me.DateOrdLbl = New System.Windows.Forms.Label()
+        Me.PharmacistIDLbl = New System.Windows.Forms.Label()
+        Me.CustomerPnl = New System.Windows.Forms.Panel()
+        Me.OrderID = New System.Windows.Forms.Label()
         Me.OrderIDLbl = New System.Windows.Forms.Label()
-        Me.CustomerAvatarPctrBx = New System.Windows.Forms.PictureBox()
-        Me.InvoiceLbl = New System.Windows.Forms.Label()
+        Me.CustomerName = New System.Windows.Forms.Label()
+        Me.CGenderLbl = New System.Windows.Forms.Label()
+        Me.CGender = New System.Windows.Forms.Label()
+        Me.CustomerID = New System.Windows.Forms.Label()
+        Me.CustomerNameLbl = New System.Windows.Forms.Label()
+        Me.CustomerIDLbl = New System.Windows.Forms.Label()
         Me.BackBtn = New System.Windows.Forms.Button()
-        Me.SortCmbBx = New System.Windows.Forms.ComboBox()
-        Me.SortLbl = New System.Windows.Forms.Label()
-        Me.SortPnl = New System.Windows.Forms.Panel()
-        Me.QtyLbl = New System.Windows.Forms.Label()
-        Me.ItemNameLbl = New System.Windows.Forms.Label()
-        Me.ItemIDLbl = New System.Windows.Forms.Label()
-        Me.OrderItemsTblLyt = New System.Windows.Forms.TableLayoutPanel()
-        Me.HeaderTblLyt = New System.Windows.Forms.TableLayoutPanel()
-        Me.TotalLbl = New System.Windows.Forms.Label()
-        Me.OrderItemsPnl = New System.Windows.Forms.Panel()
-        Me.OrderItemsDockPnl = New System.Windows.Forms.Panel()
-        Me.SortDockPnl = New System.Windows.Forms.Panel()
-        Me.OCDockPnl = New System.Windows.Forms.Panel()
-        Me.OrderInfoPnl.SuspendLayout()
-        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SortPnl.SuspendLayout()
-        Me.HeaderTblLyt.SuspendLayout()
-        Me.OrderItemsPnl.SuspendLayout()
-        Me.OrderItemsDockPnl.SuspendLayout()
-        Me.SortDockPnl.SuspendLayout()
-        Me.OCDockPnl.SuspendLayout()
+        Me.FooterPnl = New System.Windows.Forms.Panel()
+        Me.DetailsSplitter = New System.Windows.Forms.SplitContainer()
+        Me.InvoicePnl = New System.Windows.Forms.Panel()
+        Me.DateOrdCmplt = New System.Windows.Forms.Label()
+        Me.Invoice = New System.Windows.Forms.Label()
+        Me.DateOrdCmpltLbl = New System.Windows.Forms.Label()
+        Me.InvoiceNoLbl = New System.Windows.Forms.Label()
+        Me.TotalAmountPnl = New System.Windows.Forms.Panel()
+        Me.TotalAmount = New System.Windows.Forms.Label()
+        Me.TotalAmountLbl = New System.Windows.Forms.Label()
+        Me.IDGVPnl.SuspendLayout()
+        CType(Me.IDGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.HeaderPnl.SuspendLayout()
+        Me.InfoPnl.SuspendLayout()
+        CType(Me.TranInfoSeperator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TranInfoSeperator.Panel1.SuspendLayout()
+        Me.TranInfoSeperator.Panel2.SuspendLayout()
+        Me.TranInfoSeperator.SuspendLayout()
+        Me.PharmacistPnl.SuspendLayout()
+        Me.CustomerPnl.SuspendLayout()
+        Me.FooterPnl.SuspendLayout()
+        CType(Me.DetailsSplitter, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DetailsSplitter.Panel1.SuspendLayout()
+        Me.DetailsSplitter.Panel2.SuspendLayout()
+        Me.DetailsSplitter.SuspendLayout()
+        Me.InvoicePnl.SuspendLayout()
+        Me.TotalAmountPnl.SuspendLayout()
         Me.SuspendLayout()
         '
-        'PHPLbl
+        'IDGVPnl
         '
-        Me.PHPLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PHPLbl.AutoSize = True
-        Me.PHPLbl.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PHPLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.PHPLbl.Location = New System.Drawing.Point(44, 636)
-        Me.PHPLbl.Name = "PHPLbl"
-        Me.PHPLbl.Size = New System.Drawing.Size(81, 33)
-        Me.PHPLbl.TabIndex = 59
-        Me.PHPLbl.Text = "PHP "
+        Me.IDGVPnl.Controls.Add(Me.IDGV)
+        Me.IDGVPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.IDGVPnl.Location = New System.Drawing.Point(0, 277)
+        Me.IDGVPnl.Name = "IDGVPnl"
+        Me.IDGVPnl.Padding = New System.Windows.Forms.Padding(20, 0, 20, 0)
+        Me.IDGVPnl.Size = New System.Drawing.Size(1184, 444)
+        Me.IDGVPnl.TabIndex = 43
         '
-        'TotalItemsLb
+        'IDGV
         '
-        Me.TotalItemsLb.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.TotalItemsLb.AutoSize = True
-        Me.TotalItemsLb.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TotalItemsLb.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.TotalItemsLb.Location = New System.Drawing.Point(204, 597)
-        Me.TotalItemsLb.Name = "TotalItemsLb"
-        Me.TotalItemsLb.Size = New System.Drawing.Size(146, 33)
-        Me.TotalItemsLb.TabIndex = 58
-        Me.TotalItemsLb.Text = "(00 items)"
+        Me.IDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.IDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.IDGV.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.IDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.IDGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.IDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.IDGV.DefaultCellStyle = DataGridViewCellStyle4
+        Me.IDGV.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.IDGV.EnableHeadersVisualStyles = False
+        Me.IDGV.GridColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.IDGV.Location = New System.Drawing.Point(20, 0)
+        Me.IDGV.Name = "IDGV"
+        Me.IDGV.ReadOnly = True
+        Me.IDGV.RowHeadersVisible = False
+        Me.IDGV.Size = New System.Drawing.Size(1144, 444)
+        Me.IDGV.TabIndex = 2
         '
-        'OrderTotalLbl
+        'HeaderPnl
         '
-        Me.OrderTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.OrderTotalLbl.AutoSize = True
-        Me.OrderTotalLbl.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OrderTotalLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.OrderTotalLbl.Location = New System.Drawing.Point(44, 598)
-        Me.OrderTotalLbl.Name = "OrderTotalLbl"
-        Me.OrderTotalLbl.Size = New System.Drawing.Size(169, 34)
-        Me.OrderTotalLbl.TabIndex = 57
-        Me.OrderTotalLbl.Text = "Order Total"
+        Me.HeaderPnl.Controls.Add(Me.InfoPnl)
+        Me.HeaderPnl.Controls.Add(Me.BackBtn)
+        Me.HeaderPnl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.HeaderPnl.Location = New System.Drawing.Point(0, 0)
+        Me.HeaderPnl.Name = "HeaderPnl"
+        Me.HeaderPnl.Size = New System.Drawing.Size(1184, 277)
+        Me.HeaderPnl.TabIndex = 41
         '
-        'NameLbl
+        'InfoPnl
         '
-        Me.NameLbl.AutoSize = True
-        Me.NameLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.NameLbl.Location = New System.Drawing.Point(156, 188)
-        Me.NameLbl.Name = "NameLbl"
-        Me.NameLbl.Size = New System.Drawing.Size(0, 24)
-        Me.NameLbl.TabIndex = 52
+        Me.InfoPnl.Controls.Add(Me.TranInfoSeperator)
+        Me.InfoPnl.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.InfoPnl.Location = New System.Drawing.Point(0, 56)
+        Me.InfoPnl.Name = "InfoPnl"
+        Me.InfoPnl.Padding = New System.Windows.Forms.Padding(20)
+        Me.InfoPnl.Size = New System.Drawing.Size(1184, 221)
+        Me.InfoPnl.TabIndex = 39
+        '
+        'TranInfoSeperator
+        '
+        Me.TranInfoSeperator.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TranInfoSeperator.IsSplitterFixed = True
+        Me.TranInfoSeperator.Location = New System.Drawing.Point(20, 20)
+        Me.TranInfoSeperator.Name = "TranInfoSeperator"
+        '
+        'TranInfoSeperator.Panel1
+        '
+        Me.TranInfoSeperator.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.TranInfoSeperator.Panel1.Controls.Add(Me.PharmacistPnl)
+        Me.TranInfoSeperator.Panel1.Padding = New System.Windows.Forms.Padding(2)
+        '
+        'TranInfoSeperator.Panel2
+        '
+        Me.TranInfoSeperator.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.TranInfoSeperator.Panel2.Controls.Add(Me.CustomerPnl)
+        Me.TranInfoSeperator.Panel2.Padding = New System.Windows.Forms.Padding(2)
+        Me.TranInfoSeperator.Size = New System.Drawing.Size(1144, 181)
+        Me.TranInfoSeperator.SplitterDistance = 552
+        Me.TranInfoSeperator.SplitterWidth = 40
+        Me.TranInfoSeperator.TabIndex = 43
+        '
+        'PharmacistPnl
+        '
+        Me.PharmacistPnl.BackColor = System.Drawing.Color.White
+        Me.PharmacistPnl.Controls.Add(Me.PharmacitsName)
+        Me.PharmacistPnl.Controls.Add(Me.PhoneNum)
+        Me.PharmacistPnl.Controls.Add(Me.Email)
+        Me.PharmacistPnl.Controls.Add(Me.PhoneNumLbl)
+        Me.PharmacistPnl.Controls.Add(Me.EmailLbl)
+        Me.PharmacistPnl.Controls.Add(Me.PGenderLbl)
+        Me.PharmacistPnl.Controls.Add(Me.PGender)
+        Me.PharmacistPnl.Controls.Add(Me.PharmacistID)
+        Me.PharmacistPnl.Controls.Add(Me.PharmacistNameLbl)
+        Me.PharmacistPnl.Controls.Add(Me.PharmacistIDLbl)
+        Me.PharmacistPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PharmacistPnl.Location = New System.Drawing.Point(2, 2)
+        Me.PharmacistPnl.Name = "PharmacistPnl"
+        Me.PharmacistPnl.Size = New System.Drawing.Size(548, 177)
+        Me.PharmacistPnl.TabIndex = 0
+        '
+        'PharmacitsName
+        '
+        Me.PharmacitsName.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PharmacitsName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PharmacitsName.Location = New System.Drawing.Point(190, 47)
+        Me.PharmacitsName.Name = "PharmacitsName"
+        Me.PharmacitsName.Size = New System.Drawing.Size(343, 22)
+        Me.PharmacitsName.TabIndex = 63
+        Me.PharmacitsName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PhoneNum
+        '
+        Me.PhoneNum.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PhoneNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PhoneNum.Location = New System.Drawing.Point(190, 146)
+        Me.PhoneNum.Name = "PhoneNum"
+        Me.PhoneNum.Size = New System.Drawing.Size(343, 22)
+        Me.PhoneNum.TabIndex = 62
+        Me.PhoneNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Email
+        '
+        Me.Email.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Email.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.Email.Location = New System.Drawing.Point(190, 113)
+        Me.Email.Name = "Email"
+        Me.Email.Size = New System.Drawing.Size(343, 22)
+        Me.Email.TabIndex = 61
+        Me.Email.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PhoneNumLbl
+        '
+        Me.PhoneNumLbl.AutoSize = True
+        Me.PhoneNumLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PhoneNumLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PhoneNumLbl.Location = New System.Drawing.Point(12, 146)
+        Me.PhoneNumLbl.Name = "PhoneNumLbl"
+        Me.PhoneNumLbl.Size = New System.Drawing.Size(147, 22)
+        Me.PhoneNumLbl.TabIndex = 60
+        Me.PhoneNumLbl.Text = "Phone number"
+        '
+        'EmailLbl
+        '
+        Me.EmailLbl.AutoSize = True
+        Me.EmailLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.EmailLbl.Location = New System.Drawing.Point(12, 113)
+        Me.EmailLbl.Name = "EmailLbl"
+        Me.EmailLbl.Size = New System.Drawing.Size(61, 22)
+        Me.EmailLbl.TabIndex = 59
+        Me.EmailLbl.Text = "Email"
+        '
+        'PGenderLbl
+        '
+        Me.PGenderLbl.AutoSize = True
+        Me.PGenderLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PGenderLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PGenderLbl.Location = New System.Drawing.Point(12, 80)
+        Me.PGenderLbl.Name = "PGenderLbl"
+        Me.PGenderLbl.Size = New System.Drawing.Size(79, 22)
+        Me.PGenderLbl.TabIndex = 57
+        Me.PGenderLbl.Text = "Gender"
+        '
+        'PGender
+        '
+        Me.PGender.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PGender.Location = New System.Drawing.Point(190, 80)
+        Me.PGender.Name = "PGender"
+        Me.PGender.Size = New System.Drawing.Size(343, 22)
+        Me.PGender.TabIndex = 56
+        Me.PGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PharmacistID
+        '
+        Me.PharmacistID.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PharmacistID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PharmacistID.Location = New System.Drawing.Point(190, 14)
+        Me.PharmacistID.Name = "PharmacistID"
+        Me.PharmacistID.Size = New System.Drawing.Size(343, 22)
+        Me.PharmacistID.TabIndex = 55
+        Me.PharmacistID.Text = "PHA-AAA-AAA-000"
+        Me.PharmacistID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PharmacistNameLbl
+        '
+        Me.PharmacistNameLbl.AutoSize = True
+        Me.PharmacistNameLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PharmacistNameLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PharmacistNameLbl.Location = New System.Drawing.Point(12, 47)
+        Me.PharmacistNameLbl.Name = "PharmacistNameLbl"
+        Me.PharmacistNameLbl.Size = New System.Drawing.Size(172, 22)
+        Me.PharmacistNameLbl.TabIndex = 54
+        Me.PharmacistNameLbl.Text = "Pharmacist Name"
+        '
+        'PharmacistIDLbl
+        '
+        Me.PharmacistIDLbl.AutoSize = True
+        Me.PharmacistIDLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PharmacistIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.PharmacistIDLbl.Location = New System.Drawing.Point(12, 14)
+        Me.PharmacistIDLbl.Name = "PharmacistIDLbl"
+        Me.PharmacistIDLbl.Size = New System.Drawing.Size(139, 22)
+        Me.PharmacistIDLbl.TabIndex = 53
+        Me.PharmacistIDLbl.Text = "Pharmacist ID"
+        '
+        'CustomerPnl
+        '
+        Me.CustomerPnl.BackColor = System.Drawing.Color.White
+        Me.CustomerPnl.Controls.Add(Me.OrderID)
+        Me.CustomerPnl.Controls.Add(Me.OrderIDLbl)
+        Me.CustomerPnl.Controls.Add(Me.CustomerName)
+        Me.CustomerPnl.Controls.Add(Me.CGenderLbl)
+        Me.CustomerPnl.Controls.Add(Me.CGender)
+        Me.CustomerPnl.Controls.Add(Me.CustomerID)
+        Me.CustomerPnl.Controls.Add(Me.CustomerNameLbl)
+        Me.CustomerPnl.Controls.Add(Me.CustomerIDLbl)
+        Me.CustomerPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CustomerPnl.Location = New System.Drawing.Point(2, 2)
+        Me.CustomerPnl.Name = "CustomerPnl"
+        Me.CustomerPnl.Size = New System.Drawing.Size(548, 177)
+        Me.CustomerPnl.TabIndex = 1
+        '
+        'OrderID
+        '
+        Me.OrderID.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OrderID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.OrderID.Location = New System.Drawing.Point(189, 113)
+        Me.OrderID.Name = "OrderID"
+        Me.OrderID.Size = New System.Drawing.Size(364, 22)
+        Me.OrderID.TabIndex = 71
+        Me.OrderID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'OrderIDLbl
+        '
+        Me.OrderIDLbl.AutoSize = True
+        Me.OrderIDLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OrderIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.OrderIDLbl.Location = New System.Drawing.Point(11, 113)
+        Me.OrderIDLbl.Name = "OrderIDLbl"
+        Me.OrderIDLbl.Size = New System.Drawing.Size(88, 22)
+        Me.OrderIDLbl.TabIndex = 69
+        Me.OrderIDLbl.Text = "Order ID"
+        '
+        'CustomerName
+        '
+        Me.CustomerName.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomerName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.CustomerName.Location = New System.Drawing.Point(189, 47)
+        Me.CustomerName.Name = "CustomerName"
+        Me.CustomerName.Size = New System.Drawing.Size(364, 22)
+        Me.CustomerName.TabIndex = 68
+        Me.CustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CGenderLbl
+        '
+        Me.CGenderLbl.AutoSize = True
+        Me.CGenderLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CGenderLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.CGenderLbl.Location = New System.Drawing.Point(11, 80)
+        Me.CGenderLbl.Name = "CGenderLbl"
+        Me.CGenderLbl.Size = New System.Drawing.Size(79, 22)
+        Me.CGenderLbl.TabIndex = 67
+        Me.CGenderLbl.Text = "Gender"
+        '
+        'CGender
+        '
+        Me.CGender.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CGender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.CGender.Location = New System.Drawing.Point(189, 80)
+        Me.CGender.Name = "CGender"
+        Me.CGender.Size = New System.Drawing.Size(364, 22)
+        Me.CGender.TabIndex = 66
+        Me.CGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CustomerID
+        '
+        Me.CustomerID.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomerID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.CustomerID.Location = New System.Drawing.Point(189, 14)
+        Me.CustomerID.Name = "CustomerID"
+        Me.CustomerID.Size = New System.Drawing.Size(364, 22)
+        Me.CustomerID.TabIndex = 65
+        Me.CustomerID.Text = "CST-AAA-AAA-000"
+        Me.CustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'CustomerNameLbl
+        '
+        Me.CustomerNameLbl.AutoSize = True
+        Me.CustomerNameLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomerNameLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.CustomerNameLbl.Location = New System.Drawing.Point(11, 47)
+        Me.CustomerNameLbl.Name = "CustomerNameLbl"
+        Me.CustomerNameLbl.Size = New System.Drawing.Size(158, 22)
+        Me.CustomerNameLbl.TabIndex = 64
+        Me.CustomerNameLbl.Text = "Customer Name"
         '
         'CustomerIDLbl
         '
         Me.CustomerIDLbl.AutoSize = True
-        Me.CustomerIDLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomerIDLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CustomerIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.CustomerIDLbl.Location = New System.Drawing.Point(156, 164)
+        Me.CustomerIDLbl.Location = New System.Drawing.Point(11, 14)
         Me.CustomerIDLbl.Name = "CustomerIDLbl"
-        Me.CustomerIDLbl.Size = New System.Drawing.Size(198, 24)
-        Me.CustomerIDLbl.TabIndex = 50
-        Me.CustomerIDLbl.Text = "CST-AAA-AAA-000"
-        '
-        'InvNoLbl
-        '
-        Me.InvNoLbl.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InvNoLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.InvNoLbl.Location = New System.Drawing.Point(166, 74)
-        Me.InvNoLbl.Name = "InvNoLbl"
-        Me.InvNoLbl.Size = New System.Drawing.Size(251, 34)
-        Me.InvNoLbl.TabIndex = 48
-        Me.InvNoLbl.Text = "INV-AAA-AAA-000"
-        Me.InvNoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'OrderInfoPnl
-        '
-        Me.OrderInfoPnl.Controls.Add(Me.PharmacistIDLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.PharmacistNameLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.PharmacistLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.DCLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.DOLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.DateCompLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.DateOrdLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.OrderIDLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.PHPLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.TotalItemsLb)
-        Me.OrderInfoPnl.Controls.Add(Me.OrderTotalLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.NameLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.CustomerAvatarPctrBx)
-        Me.OrderInfoPnl.Controls.Add(Me.CustomerIDLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.InvNoLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.InvoiceLbl)
-        Me.OrderInfoPnl.Controls.Add(Me.BackBtn)
-        Me.OrderInfoPnl.Dock = System.Windows.Forms.DockStyle.Left
-        Me.OrderInfoPnl.Location = New System.Drawing.Point(0, 0)
-        Me.OrderInfoPnl.Name = "OrderInfoPnl"
-        Me.OrderInfoPnl.Size = New System.Drawing.Size(496, 721)
-        Me.OrderInfoPnl.TabIndex = 37
-        '
-        'PharmacistIDLbl
-        '
-        Me.PharmacistIDLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PharmacistIDLbl.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PharmacistIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.PharmacistIDLbl.Location = New System.Drawing.Point(191, 463)
-        Me.PharmacistIDLbl.Name = "PharmacistIDLbl"
-        Me.PharmacistIDLbl.Size = New System.Drawing.Size(251, 34)
-        Me.PharmacistIDLbl.TabIndex = 69
-        Me.PharmacistIDLbl.Text = "PHA-AAA-AAA-000"
-        Me.PharmacistIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PharmacistNameLbl
-        '
-        Me.PharmacistNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PharmacistNameLbl.AutoSize = True
-        Me.PharmacistNameLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PharmacistNameLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.PharmacistNameLbl.Location = New System.Drawing.Point(44, 494)
-        Me.PharmacistNameLbl.Name = "PharmacistNameLbl"
-        Me.PharmacistNameLbl.Size = New System.Drawing.Size(0, 27)
-        Me.PharmacistNameLbl.TabIndex = 68
-        '
-        'PharmacistLbl
-        '
-        Me.PharmacistLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PharmacistLbl.AutoSize = True
-        Me.PharmacistLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PharmacistLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.PharmacistLbl.Location = New System.Drawing.Point(44, 465)
-        Me.PharmacistLbl.Name = "PharmacistLbl"
-        Me.PharmacistLbl.Size = New System.Drawing.Size(141, 29)
-        Me.PharmacistLbl.TabIndex = 67
-        Me.PharmacistLbl.Text = "Pharmacist"
-        '
-        'DCLbl
-        '
-        Me.DCLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.DCLbl.AutoSize = True
-        Me.DCLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DCLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.DCLbl.Location = New System.Drawing.Point(45, 400)
-        Me.DCLbl.Name = "DCLbl"
-        Me.DCLbl.Size = New System.Drawing.Size(130, 27)
-        Me.DCLbl.TabIndex = 64
-        Me.DCLbl.Text = "00/00/0000"
-        '
-        'DOLbl
-        '
-        Me.DOLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.DOLbl.AutoSize = True
-        Me.DOLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DOLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.DOLbl.Location = New System.Drawing.Point(44, 308)
-        Me.DOLbl.Name = "DOLbl"
-        Me.DOLbl.Size = New System.Drawing.Size(130, 27)
-        Me.DOLbl.TabIndex = 63
-        Me.DOLbl.Text = "00/00/0000"
-        '
-        'DateCompLbl
-        '
-        Me.DateCompLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.DateCompLbl.AutoSize = True
-        Me.DateCompLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateCompLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.DateCompLbl.Location = New System.Drawing.Point(44, 371)
-        Me.DateCompLbl.Name = "DateCompLbl"
-        Me.DateCompLbl.Size = New System.Drawing.Size(251, 29)
-        Me.DateCompLbl.TabIndex = 62
-        Me.DateCompLbl.Text = "Date Order Complete"
-        '
-        'DateOrdLbl
-        '
-        Me.DateOrdLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.DateOrdLbl.AutoSize = True
-        Me.DateOrdLbl.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateOrdLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.DateOrdLbl.Location = New System.Drawing.Point(44, 279)
-        Me.DateOrdLbl.Name = "DateOrdLbl"
-        Me.DateOrdLbl.Size = New System.Drawing.Size(163, 29)
-        Me.DateOrdLbl.TabIndex = 61
-        Me.DateOrdLbl.Text = "Date Ordered"
-        '
-        'OrderIDLbl
-        '
-        Me.OrderIDLbl.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.OrderIDLbl.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OrderIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(190, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.OrderIDLbl.Location = New System.Drawing.Point(45, 563)
-        Me.OrderIDLbl.Name = "OrderIDLbl"
-        Me.OrderIDLbl.Size = New System.Drawing.Size(251, 34)
-        Me.OrderIDLbl.TabIndex = 60
-        Me.OrderIDLbl.Text = "ORD-AAA-AAA-000"
-        Me.OrderIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'CustomerAvatarPctrBx
-        '
-        Me.CustomerAvatarPctrBx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.CustomerAvatarPctrBx.Location = New System.Drawing.Point(50, 135)
-        Me.CustomerAvatarPctrBx.Name = "CustomerAvatarPctrBx"
-        Me.CustomerAvatarPctrBx.Size = New System.Drawing.Size(100, 100)
-        Me.CustomerAvatarPctrBx.TabIndex = 51
-        Me.CustomerAvatarPctrBx.TabStop = False
-        '
-        'InvoiceLbl
-        '
-        Me.InvoiceLbl.AutoSize = True
-        Me.InvoiceLbl.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.InvoiceLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.InvoiceLbl.Location = New System.Drawing.Point(44, 72)
-        Me.InvoiceLbl.Name = "InvoiceLbl"
-        Me.InvoiceLbl.Size = New System.Drawing.Size(116, 34)
-        Me.InvoiceLbl.TabIndex = 47
-        Me.InvoiceLbl.Text = "Invoice"
+        Me.CustomerIDLbl.Size = New System.Drawing.Size(125, 22)
+        Me.CustomerIDLbl.TabIndex = 63
+        Me.CustomerIDLbl.Text = "Customer ID"
         '
         'BackBtn
         '
@@ -282,231 +403,202 @@ Partial Class InvoiceInfoForm
         Me.BackBtn.Location = New System.Drawing.Point(20, 20)
         Me.BackBtn.Name = "BackBtn"
         Me.BackBtn.Size = New System.Drawing.Size(30, 30)
-        Me.BackBtn.TabIndex = 36
+        Me.BackBtn.TabIndex = 38
         Me.BackBtn.UseVisualStyleBackColor = True
         '
-        'SortCmbBx
+        'FooterPnl
         '
-        Me.SortCmbBx.BackColor = System.Drawing.Color.White
-        Me.SortCmbBx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SortCmbBx.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortCmbBx.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortCmbBx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.SortCmbBx.FormattingEnabled = True
-        Me.SortCmbBx.Items.AddRange(New Object() {"Item (A-Z)", "Item (Z-A)", "Quantity ((Ascending))", "Quantity ((Descending))", "Total (Ascending)", "Total (Descending)"})
-        Me.SortCmbBx.Location = New System.Drawing.Point(2, 2)
-        Me.SortCmbBx.Name = "SortCmbBx"
-        Me.SortCmbBx.Size = New System.Drawing.Size(214, 30)
-        Me.SortCmbBx.TabIndex = 0
+        Me.FooterPnl.Controls.Add(Me.DetailsSplitter)
+        Me.FooterPnl.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.FooterPnl.Location = New System.Drawing.Point(0, 589)
+        Me.FooterPnl.Name = "FooterPnl"
+        Me.FooterPnl.Padding = New System.Windows.Forms.Padding(20)
+        Me.FooterPnl.Size = New System.Drawing.Size(1184, 132)
+        Me.FooterPnl.TabIndex = 42
         '
-        'SortLbl
+        'DetailsSplitter
         '
-        Me.SortLbl.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.SortLbl.AutoSize = True
-        Me.SortLbl.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.SortLbl.Location = New System.Drawing.Point(365, 27)
-        Me.SortLbl.Name = "SortLbl"
-        Me.SortLbl.Size = New System.Drawing.Size(49, 24)
-        Me.SortLbl.TabIndex = 45
-        Me.SortLbl.Text = "Sort"
+        Me.DetailsSplitter.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DetailsSplitter.IsSplitterFixed = True
+        Me.DetailsSplitter.Location = New System.Drawing.Point(20, 20)
+        Me.DetailsSplitter.Name = "DetailsSplitter"
         '
-        'SortPnl
+        'DetailsSplitter.Panel1
         '
-        Me.SortPnl.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.SortPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.SortPnl.Controls.Add(Me.SortCmbBx)
-        Me.SortPnl.Location = New System.Drawing.Point(420, 23)
-        Me.SortPnl.Name = "SortPnl"
-        Me.SortPnl.Size = New System.Drawing.Size(218, 34)
-        Me.SortPnl.TabIndex = 44
+        Me.DetailsSplitter.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.DetailsSplitter.Panel1.Controls.Add(Me.InvoicePnl)
+        Me.DetailsSplitter.Panel1.Padding = New System.Windows.Forms.Padding(2)
         '
-        'QtyLbl
+        'DetailsSplitter.Panel2
         '
-        Me.QtyLbl.AutoSize = True
-        Me.QtyLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.QtyLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QtyLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.QtyLbl.Location = New System.Drawing.Point(315, 0)
-        Me.QtyLbl.Name = "QtyLbl"
-        Me.QtyLbl.Size = New System.Drawing.Size(150, 40)
-        Me.QtyLbl.TabIndex = 6
-        Me.QtyLbl.Text = "Quantity"
-        Me.QtyLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.DetailsSplitter.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.DetailsSplitter.Panel2.Controls.Add(Me.TotalAmountPnl)
+        Me.DetailsSplitter.Panel2.Padding = New System.Windows.Forms.Padding(2)
+        Me.DetailsSplitter.Size = New System.Drawing.Size(1144, 92)
+        Me.DetailsSplitter.SplitterDistance = 552
+        Me.DetailsSplitter.SplitterWidth = 40
+        Me.DetailsSplitter.TabIndex = 44
         '
-        'ItemNameLbl
+        'InvoicePnl
         '
-        Me.ItemNameLbl.AutoSize = True
-        Me.ItemNameLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ItemNameLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ItemNameLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.ItemNameLbl.Location = New System.Drawing.Point(159, 0)
-        Me.ItemNameLbl.Name = "ItemNameLbl"
-        Me.ItemNameLbl.Size = New System.Drawing.Size(150, 40)
-        Me.ItemNameLbl.TabIndex = 5
-        Me.ItemNameLbl.Text = "Item name"
-        Me.ItemNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InvoicePnl.BackColor = System.Drawing.Color.White
+        Me.InvoicePnl.Controls.Add(Me.DateOrdCmplt)
+        Me.InvoicePnl.Controls.Add(Me.Invoice)
+        Me.InvoicePnl.Controls.Add(Me.DateOrdCmpltLbl)
+        Me.InvoicePnl.Controls.Add(Me.InvoiceNoLbl)
+        Me.InvoicePnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.InvoicePnl.Location = New System.Drawing.Point(2, 2)
+        Me.InvoicePnl.Name = "InvoicePnl"
+        Me.InvoicePnl.Size = New System.Drawing.Size(548, 88)
+        Me.InvoicePnl.TabIndex = 0
         '
-        'ItemIDLbl
+        'DateOrdCmplt
         '
-        Me.ItemIDLbl.AutoSize = True
-        Me.ItemIDLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ItemIDLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ItemIDLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.ItemIDLbl.Location = New System.Drawing.Point(3, 0)
-        Me.ItemIDLbl.Name = "ItemIDLbl"
-        Me.ItemIDLbl.Size = New System.Drawing.Size(150, 40)
-        Me.ItemIDLbl.TabIndex = 0
-        Me.ItemIDLbl.Text = "Item ID"
-        Me.ItemIDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.DateOrdCmplt.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateOrdCmplt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.DateOrdCmplt.Location = New System.Drawing.Point(230, 47)
+        Me.DateOrdCmplt.Name = "DateOrdCmplt"
+        Me.DateOrdCmplt.Size = New System.Drawing.Size(282, 22)
+        Me.DateOrdCmplt.TabIndex = 58
+        Me.DateOrdCmplt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'OrderItemsTblLyt
+        'Invoice
         '
-        Me.OrderItemsTblLyt.AutoScroll = True
-        Me.OrderItemsTblLyt.ColumnCount = 4
-        Me.OrderItemsTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.OrderItemsTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.44795!))
-        Me.OrderItemsTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.92113!))
-        Me.OrderItemsTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.86751!))
-        Me.OrderItemsTblLyt.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.OrderItemsTblLyt.Location = New System.Drawing.Point(2, 42)
-        Me.OrderItemsTblLyt.Name = "OrderItemsTblLyt"
-        Me.OrderItemsTblLyt.RowCount = 1
-        Me.OrderItemsTblLyt.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.OrderItemsTblLyt.Size = New System.Drawing.Size(634, 543)
-        Me.OrderItemsTblLyt.TabIndex = 2
+        Me.Invoice.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Invoice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.Invoice.Location = New System.Drawing.Point(226, 14)
+        Me.Invoice.Name = "Invoice"
+        Me.Invoice.Size = New System.Drawing.Size(286, 22)
+        Me.Invoice.TabIndex = 55
+        Me.Invoice.Text = "INV-AAA-AAA-000"
+        Me.Invoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'HeaderTblLyt
+        'DateOrdCmpltLbl
         '
-        Me.HeaderTblLyt.BackColor = System.Drawing.Color.White
-        Me.HeaderTblLyt.ColumnCount = 5
-        Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.75!))
-        Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.75!))
-        Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.75!))
-        Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.75!))
-        Me.HeaderTblLyt.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.9999979!))
-        Me.HeaderTblLyt.Controls.Add(Me.QtyLbl, 0, 0)
-        Me.HeaderTblLyt.Controls.Add(Me.ItemNameLbl, 0, 0)
-        Me.HeaderTblLyt.Controls.Add(Me.ItemIDLbl, 0, 0)
-        Me.HeaderTblLyt.Controls.Add(Me.TotalLbl, 3, 0)
-        Me.HeaderTblLyt.Dock = System.Windows.Forms.DockStyle.Top
-        Me.HeaderTblLyt.Location = New System.Drawing.Point(2, 2)
-        Me.HeaderTblLyt.Name = "HeaderTblLyt"
-        Me.HeaderTblLyt.RowCount = 1
-        Me.HeaderTblLyt.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.HeaderTblLyt.Size = New System.Drawing.Size(634, 40)
-        Me.HeaderTblLyt.TabIndex = 1
+        Me.DateOrdCmpltLbl.AutoSize = True
+        Me.DateOrdCmpltLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateOrdCmpltLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.DateOrdCmpltLbl.Location = New System.Drawing.Point(12, 47)
+        Me.DateOrdCmpltLbl.Name = "DateOrdCmpltLbl"
+        Me.DateOrdCmpltLbl.Size = New System.Drawing.Size(204, 22)
+        Me.DateOrdCmpltLbl.TabIndex = 54
+        Me.DateOrdCmpltLbl.Text = "Date Order Complete"
         '
-        'TotalLbl
+        'InvoiceNoLbl
         '
-        Me.TotalLbl.AutoSize = True
-        Me.TotalLbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TotalLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.TotalLbl.Location = New System.Drawing.Point(471, 0)
-        Me.TotalLbl.Name = "TotalLbl"
-        Me.TotalLbl.Size = New System.Drawing.Size(150, 40)
-        Me.TotalLbl.TabIndex = 8
-        Me.TotalLbl.Text = "Total"
-        Me.TotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InvoiceNoLbl.AutoSize = True
+        Me.InvoiceNoLbl.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InvoiceNoLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.InvoiceNoLbl.Location = New System.Drawing.Point(12, 14)
+        Me.InvoiceNoLbl.Name = "InvoiceNoLbl"
+        Me.InvoiceNoLbl.Size = New System.Drawing.Size(112, 22)
+        Me.InvoiceNoLbl.TabIndex = 53
+        Me.InvoiceNoLbl.Text = "Invoice No."
         '
-        'OrderItemsPnl
+        'TotalAmountPnl
         '
-        Me.OrderItemsPnl.BackColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.OrderItemsPnl.Controls.Add(Me.OrderItemsTblLyt)
-        Me.OrderItemsPnl.Controls.Add(Me.HeaderTblLyt)
-        Me.OrderItemsPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.OrderItemsPnl.Location = New System.Drawing.Point(0, 84)
-        Me.OrderItemsPnl.Name = "OrderItemsPnl"
-        Me.OrderItemsPnl.Padding = New System.Windows.Forms.Padding(2)
-        Me.OrderItemsPnl.Size = New System.Drawing.Size(638, 587)
-        Me.OrderItemsPnl.TabIndex = 2
+        Me.TotalAmountPnl.BackColor = System.Drawing.Color.White
+        Me.TotalAmountPnl.Controls.Add(Me.TotalAmount)
+        Me.TotalAmountPnl.Controls.Add(Me.TotalAmountLbl)
+        Me.TotalAmountPnl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TotalAmountPnl.Location = New System.Drawing.Point(2, 2)
+        Me.TotalAmountPnl.Name = "TotalAmountPnl"
+        Me.TotalAmountPnl.Size = New System.Drawing.Size(548, 88)
+        Me.TotalAmountPnl.TabIndex = 1
         '
-        'OrderItemsDockPnl
+        'TotalAmount
         '
-        Me.OrderItemsDockPnl.Controls.Add(Me.OrderItemsPnl)
-        Me.OrderItemsDockPnl.Controls.Add(Me.SortDockPnl)
-        Me.OrderItemsDockPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.OrderItemsDockPnl.Location = New System.Drawing.Point(496, 0)
-        Me.OrderItemsDockPnl.Name = "OrderItemsDockPnl"
-        Me.OrderItemsDockPnl.Padding = New System.Windows.Forms.Padding(0, 0, 50, 50)
-        Me.OrderItemsDockPnl.Size = New System.Drawing.Size(688, 721)
-        Me.OrderItemsDockPnl.TabIndex = 38
+        Me.TotalAmount.AutoSize = True
+        Me.TotalAmount.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotalAmount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.TotalAmount.Location = New System.Drawing.Point(9, 40)
+        Me.TotalAmount.Name = "TotalAmount"
+        Me.TotalAmount.Size = New System.Drawing.Size(70, 32)
+        Me.TotalAmount.TabIndex = 64
+        Me.TotalAmount.Text = "PHP"
         '
-        'SortDockPnl
+        'TotalAmountLbl
         '
-        Me.SortDockPnl.Controls.Add(Me.SortLbl)
-        Me.SortDockPnl.Controls.Add(Me.SortPnl)
-        Me.SortDockPnl.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SortDockPnl.Location = New System.Drawing.Point(0, 0)
-        Me.SortDockPnl.Name = "SortDockPnl"
-        Me.SortDockPnl.Size = New System.Drawing.Size(638, 84)
-        Me.SortDockPnl.TabIndex = 0
-        '
-        'OCDockPnl
-        '
-        Me.OCDockPnl.Controls.Add(Me.OrderItemsDockPnl)
-        Me.OCDockPnl.Controls.Add(Me.OrderInfoPnl)
-        Me.OCDockPnl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.OCDockPnl.Location = New System.Drawing.Point(0, 0)
-        Me.OCDockPnl.Name = "OCDockPnl"
-        Me.OCDockPnl.Size = New System.Drawing.Size(1184, 721)
-        Me.OCDockPnl.TabIndex = 1
+        Me.TotalAmountLbl.AutoSize = True
+        Me.TotalAmountLbl.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotalAmountLbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(22, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.TotalAmountLbl.Location = New System.Drawing.Point(11, 14)
+        Me.TotalAmountLbl.Name = "TotalAmountLbl"
+        Me.TotalAmountLbl.Size = New System.Drawing.Size(109, 19)
+        Me.TotalAmountLbl.TabIndex = 63
+        Me.TotalAmountLbl.Text = "Total Amount"
         '
         'InvoiceInfoForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1184, 721)
-        Me.Controls.Add(Me.OCDockPnl)
+        Me.Controls.Add(Me.FooterPnl)
+        Me.Controls.Add(Me.IDGVPnl)
+        Me.Controls.Add(Me.HeaderPnl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "InvoiceInfoForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "ReferenceInfoForm"
-        Me.OrderInfoPnl.ResumeLayout(False)
-        Me.OrderInfoPnl.PerformLayout()
-        CType(Me.CustomerAvatarPctrBx, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SortPnl.ResumeLayout(False)
-        Me.HeaderTblLyt.ResumeLayout(False)
-        Me.HeaderTblLyt.PerformLayout()
-        Me.OrderItemsPnl.ResumeLayout(False)
-        Me.OrderItemsDockPnl.ResumeLayout(False)
-        Me.SortDockPnl.ResumeLayout(False)
-        Me.SortDockPnl.PerformLayout()
-        Me.OCDockPnl.ResumeLayout(False)
+        Me.IDGVPnl.ResumeLayout(False)
+        CType(Me.IDGV, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.HeaderPnl.ResumeLayout(False)
+        Me.InfoPnl.ResumeLayout(False)
+        Me.TranInfoSeperator.Panel1.ResumeLayout(False)
+        Me.TranInfoSeperator.Panel2.ResumeLayout(False)
+        CType(Me.TranInfoSeperator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TranInfoSeperator.ResumeLayout(False)
+        Me.PharmacistPnl.ResumeLayout(False)
+        Me.PharmacistPnl.PerformLayout()
+        Me.CustomerPnl.ResumeLayout(False)
+        Me.CustomerPnl.PerformLayout()
+        Me.FooterPnl.ResumeLayout(False)
+        Me.DetailsSplitter.Panel1.ResumeLayout(False)
+        Me.DetailsSplitter.Panel2.ResumeLayout(False)
+        CType(Me.DetailsSplitter, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DetailsSplitter.ResumeLayout(False)
+        Me.InvoicePnl.ResumeLayout(False)
+        Me.InvoicePnl.PerformLayout()
+        Me.TotalAmountPnl.ResumeLayout(False)
+        Me.TotalAmountPnl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents PHPLbl As Label
-    Friend WithEvents TotalItemsLb As Label
-    Friend WithEvents OrderTotalLbl As Label
-    Friend WithEvents NameLbl As Label
-    Friend WithEvents CustomerAvatarPctrBx As PictureBox
-    Friend WithEvents CustomerIDLbl As Label
-    Friend WithEvents InvNoLbl As Label
+    Friend WithEvents IDGVPnl As Panel
+    Friend WithEvents IDGV As DataGridView
+    Friend WithEvents HeaderPnl As Panel
     Friend WithEvents BackBtn As Button
-    Friend WithEvents OrderInfoPnl As Panel
-    Friend WithEvents InvoiceLbl As Label
-    Friend WithEvents SortCmbBx As ComboBox
-    Friend WithEvents SortLbl As Label
-    Friend WithEvents SortPnl As Panel
-    Friend WithEvents QtyLbl As Label
-    Friend WithEvents ItemNameLbl As Label
-    Friend WithEvents ItemIDLbl As Label
-    Friend WithEvents OrderItemsTblLyt As TableLayoutPanel
-    Friend WithEvents HeaderTblLyt As TableLayoutPanel
-    Friend WithEvents OrderItemsPnl As Panel
-    Friend WithEvents OrderItemsDockPnl As Panel
-    Friend WithEvents SortDockPnl As Panel
-    Friend WithEvents OCDockPnl As Panel
-    Friend WithEvents OrderIDLbl As Label
-    Friend WithEvents DCLbl As Label
-    Friend WithEvents DOLbl As Label
-    Friend WithEvents DateCompLbl As Label
-    Friend WithEvents DateOrdLbl As Label
+    Friend WithEvents FooterPnl As Panel
+    Friend WithEvents InfoPnl As Panel
+    Friend WithEvents TranInfoSeperator As SplitContainer
+    Friend WithEvents PharmacistPnl As Panel
+    Friend WithEvents PharmacitsName As Label
+    Friend WithEvents PhoneNum As Label
+    Friend WithEvents Email As Label
+    Friend WithEvents PhoneNumLbl As Label
+    Friend WithEvents EmailLbl As Label
+    Friend WithEvents PGenderLbl As Label
+    Friend WithEvents PGender As Label
+    Friend WithEvents PharmacistID As Label
     Friend WithEvents PharmacistNameLbl As Label
-    Friend WithEvents PharmacistLbl As Label
     Friend WithEvents PharmacistIDLbl As Label
-    Friend WithEvents TotalLbl As Label
+    Friend WithEvents CustomerPnl As Panel
+    Friend WithEvents OrderID As Label
+    Friend WithEvents OrderIDLbl As Label
+    Friend WithEvents CustomerName As Label
+    Friend WithEvents CGenderLbl As Label
+    Friend WithEvents CGender As Label
+    Friend WithEvents CustomerID As Label
+    Friend WithEvents CustomerNameLbl As Label
+    Friend WithEvents CustomerIDLbl As Label
+    Friend WithEvents DetailsSplitter As SplitContainer
+    Friend WithEvents InvoicePnl As Panel
+    Friend WithEvents DateOrdCmplt As Label
+    Friend WithEvents Invoice As Label
+    Friend WithEvents DateOrdCmpltLbl As Label
+    Friend WithEvents InvoiceNoLbl As Label
+    Friend WithEvents TotalAmountPnl As Panel
+    Friend WithEvents TotalAmount As Label
+    Friend WithEvents TotalAmountLbl As Label
 End Class

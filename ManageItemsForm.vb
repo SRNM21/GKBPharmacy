@@ -4,9 +4,7 @@ Public Class ManageItemsForm
     Private DGQuery As String = "SELECT 
                                     * 
                                 FROM 
-                                    items
-                                WHERE 
-                                    item_id <> 'ITM-DELETED'"
+                                    items"
 
     Private Sub ManageItemsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateDataGrid(DGQuery, MIDGV) 'Add all items in datagridview
