@@ -80,6 +80,7 @@
         If response = DialogResult.Yes Then
             LogInForm.UsrnmTxtBx.Text = ""
             LogInForm.PsswrdTxtBx.Text = ""
+            Dispose()
             Hide()
             LogInForm.Show()
         End If

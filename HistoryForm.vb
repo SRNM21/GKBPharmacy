@@ -140,9 +140,9 @@ Public Class HistoryForm
             Case 1
                 SortBy = "o.order_date ASC"
             Case 2
-                SortBy = "r.date_ord_cmplt DESC"
+                SortBy = "i.date_ord_cmplt DESC"
             Case 3
-                SortBy = "r.date_ord_cmplt ASC"
+                SortBy = "i.date_ord_cmplt ASC"
             Case 4
                 SortBy = "total_items ASC"
             Case 5
@@ -261,5 +261,4 @@ Public Class HistoryForm
             MessageBox.Show($"Invoice Number does not exist", "GKB Pharmacy", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
 End Class

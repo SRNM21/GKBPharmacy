@@ -1,5 +1,4 @@
-﻿Imports System.Globalization
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Class InvoiceInfoForm
 
@@ -21,7 +20,7 @@ Public Class InvoiceInfoForm
                     pharmacists.phone_num
                 FROM 
                     pharmacists
-                LEFT JOIN 
+                LEFT JOIN
                     invoice ON invoice.phrmcst_id = pharmacists.phrmcst_id
                 WHERE 
                     invoice.invoice_no=@inv"
@@ -32,26 +31,24 @@ Public Class InvoiceInfoForm
         myCmd.Parameters.AddWithValue("@inv", Invoice.Text)
         myRdr = myCmd.ExecuteReader()
 
-        PharmacistID.ForeColor = Color.FromArgb(22, 72, 99)
-        PharmacitsName.ForeColor = Color.FromArgb(22, 72, 99)
-
         If myRdr.Read Then
-            If myRdr("phrmcst_id") Is DBNull.Value Then
-                PharmacistID.ForeColor = Color.Red
-                PharmacitsName.ForeColor = Color.Red
+            PharmacistID.ForeColor = Color.FromArgb(22, 72, 99)
+            PharmacitsName.ForeColor = Color.FromArgb(22, 72, 99)
 
-                PharmacistID.Text = "PHA-404-NOT-FOUND"
-                PharmacitsName.Text = "NOT FOUND"
-                PGender.Text = ""
-                Email.Text = ""
-                PhoneNum.Text = ""
-            Else
-                PharmacistID.Text = myRdr("phrmcst_id")
-                PharmacitsName.Text = $"{myRdr("first_name")} {myRdr("last_name")}"
-                PGender.Text = myRdr("gender")
-                Email.Text = myRdr("email")
-                PhoneNum.Text = myRdr("phone_num")
-            End If
+            PharmacistID.Text = myRdr("phrmcst_id")
+            PharmacitsName.Text = $"{myRdr("first_name")} {myRdr("last_name")}"
+            PGender.Text = myRdr("gender")
+            Email.Text = myRdr("email")
+            PhoneNum.Text = myRdr("phone_num")
+        Else
+            PharmacistID.ForeColor = Color.Red
+            PharmacitsName.ForeColor = Color.Red
+
+            PharmacistID.Text = "PHA-404-NOT-FOUND"
+            PharmacitsName.Text = "NOT FOUND"
+            PGender.Text = ""
+            Email.Text = ""
+            PhoneNum.Text = ""
         End If
 
         myConn.Close()
